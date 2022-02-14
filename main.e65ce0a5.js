@@ -1668,7 +1668,7 @@ this.wordle = this.wordle || {}, this.wordle.bundle = function(e) {
                   r = JSON.parse(window.localStorage.getItem(j)),
                   i = JSON.parse(window.localStorage.getItem(S)),
                   l = "Extreme Wordle ".concat(s);
-                l += " ".concat(n ? t : "X", "/").concat(height, "https://vnce.tech"), o && (l += "*");
+                l += " ".concat(n ? t : "X", "/").concat(height, " https://vnce.tech"), o && (l += "*");
                 var d = "";
                 return a.forEach((function(e) {
                   e && (e.forEach((function(e) {
