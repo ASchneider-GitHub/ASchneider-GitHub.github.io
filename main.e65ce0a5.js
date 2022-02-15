@@ -1705,9 +1705,12 @@ this.wordle = this.wordle || {}, this.wordle.bundle = function(e) {
               }), (function() {
                 e.gameApp.addToast("Copied results to clipboard", 2e3, !0)
               }), (function() {
+                var confirm = window.confirm("Would you like to share your game to Twitter? Your game will be copied to your clipboard either way.");
+                if(confirm){
                 var url = "Paste into here";
 var text = "";
 window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', '');
+}
               }))
             }))
           }
