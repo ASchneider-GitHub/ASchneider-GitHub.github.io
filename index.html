@@ -1,46 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-#footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #6aaa64;
-  color: white;
-  text-align: center;
-  transition: 0.5s;
-}
-</style>
-<script>
-// Detects if device is on iOS
-const isIos = () => {
-  const userAgent = window.navigator.userAgent.toLowerCase();
-  return /iphone|ipad|ipod/.test( userAgent );
-}
-// Detects if device is in standalone mode
-const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
-// Checks if should display install popup notification:
-if (isIos() && !isInStandaloneMode()) {
-  setTimeout(function(){
-      //Add the CSS class by using classList.add.
-      document.getElementById("footer").style.color = "rgba(0, 0, 0, 0)";
-      document.getElementById("footer").style.backgroundColor = "rgba(0, 0, 0, 0)";}, 3000);
-} else {
-  setTimeout(function(){
-      //Add the CSS class by using classList.add.
-      document.getElementById("footer").style.transition = "0s";
-      document.getElementById("footer").style.color = "rgba(0, 0, 0, 0)";
-      document.getElementById("footer").style.backgroundColor = "rgba(0, 0, 0, 0)";}, 0);
-      setTimeout(function(){
-          //Add the CSS class by using classList.add.
-          document.getElementById("footer").style.color = "rgba(0, 0, 0, 0)";
-          document.getElementById("footer").style.backgroundColor = "rgba(0, 0, 0, 0)";}, 3000);
-}
-
-</script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RK41BE5RJ"></script>
 <script>
@@ -178,8 +138,5 @@ if (isIos() && !isInStandaloneMode()) {
     </script>
     <script src="main.e65ce0a5.js"></script>
     <game-app></game-app>
-    <div id="footer">
-  <p>Add Extreme Wordle to your home screen by tapping share, then tapping add to home screen</p>
-</div>
   </body>
 </html>
