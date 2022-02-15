@@ -1,5 +1,6 @@
 var width = 7;
 var height = 8;
+Ca("event", "test_working");
 this.wordle = this.wordle || {}, this.wordle.bundle = function(e) {
   "use strict";
 
