@@ -1707,7 +1707,7 @@ this.wordle = this.wordle || {}, this.wordle.bundle = function(e) {
               }), (function() {
                 var url = "Paste into here";
 var text = "";
-window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', '');
               }))
             }))
           }
