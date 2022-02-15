@@ -10,7 +10,7 @@ const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.n
 
 // Checks if should display install popup notification:
 if (isIos() && !isInStandaloneMode()) {
-  alert("Just a test, disregard this message")
+  //alert("Just a test, disregard this message")
 }
 this.wordle = this.wordle || {}, this.wordle.bundle = function(e) {
   "use strict";
