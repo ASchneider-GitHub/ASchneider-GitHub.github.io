@@ -3,9 +3,9 @@
   <head>
     <script>
       window.onload = function(){
- if(window.location.hostname !== "septle.com" && localStorage.getItem("alerted") !== true) {
+ if(window.location.hostname != "septle.com" && localStorage.getItem("alerted") != "true") {
 alert("It looks like you are on the old domain, don't worry, you can keep using this one for your streak, but Septle is now located at septle.com as well.");
-   localStorage.setItem("alerted", true);
+   localStorage.setItem("alerted", "true");
 }}
       
     </script>
