@@ -1,5 +1,5 @@
 Privacy Policy
-Last updated: February 17, 2022
+Last updated: February 18, 2022
 
 This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
 
@@ -151,6 +151,12 @@ Google Analytics
 Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.
 
 You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics about visits activity.
+
+Arc is a widget added to the site to make money without ads, you can read about Arc by clicking on the purple circle in the bottom left of your screen
+
+You can opt-out of Arc by clicking on the purple circle in the bottom left of your screen and clicking the opt-out button
+
+For more information on the privacy practices of Arc, please visit the the Arc web page detailing what they are about: https://arc.io/about
 
 For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: https://policies.google.com/privacy
 
