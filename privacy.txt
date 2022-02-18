@@ -152,7 +152,7 @@ Google Analytics is a web analytics service offered by Google that tracks and re
 
 You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics about visits activity.
 
-Arc is a widget added to the site to make money without ads, you can read about Arc by clicking on the purple circle in the bottom left of your screen
+Arc is a widget added to the service to make money without ads, you can read about Arc by clicking on the purple circle in the bottom left of your screen
 
 You can opt-out of Arc by clicking on the purple circle in the bottom left of your screen and clicking the opt-out button
 
