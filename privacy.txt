@@ -152,7 +152,14 @@ Google Analytics is a web analytics service offered by Google that tracks and re
 
 You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics about visits activity.
 
+
 For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: https://policies.google.com/privacy
+
+Arc is a widget added to the site to make money without ads, you can read about Arc by clicking on the purple circle in the bottom left of your screen
+
+You can opt-out of Arc by clicking on the purple circle in the bottom left of your screen and clicking the opt-out button
+
+For more information on the privacy practices of Arc, please visit the the Arc web page detailing what they are about: https://arc.io/about
 
 Children's Privacy
 Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
