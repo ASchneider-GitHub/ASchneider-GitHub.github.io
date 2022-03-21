@@ -310,7 +310,7 @@ window.septle = {
             emojiString += "\n";
           }
         });
-        if(!allCorrect) {
+        if(!allCorrect && tries != 0) {
           tries = "X";
         }
         let gameNames = {
