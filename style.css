@@ -75,7 +75,7 @@ body {
   position: fixed;
   height: -webkit-fill-available;
   /* Prevent font scaling in landscape while allowing user zoom */
-  -webkit-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
 }
 
 main {
@@ -161,7 +161,7 @@ table.squares td {
   }
 }
 @supports (-webkit-touch-callout: none) {
-  /* CSS specific to iOS devices */ 
+  /* CSS specific to iOS devices */
   section.keyboard .row {
     gap: 2px !important;
   }
@@ -380,6 +380,9 @@ aside button.stats:before {
 }
 aside button.share:before {
   content: "\e09a  Share";
+}
+aside button.copy:before {
+  content: "\f0c5  Copy";
 }
 aside button.twitter:before {
   content: "\f099  Tweet";

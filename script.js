@@ -1,5 +1,5 @@
 window.dictionary = [];
-fetch("https://ifiles.ga/p/dictionary.json")
+fetch("dictionary.json")
   .then((x) => x.json())
   .then((words) => {
     window.dictionary = words;
@@ -507,7 +507,7 @@ document.addEventListener("focus", function(){
 });
 
 // check to see if coming from nytimes version
-if(localStorage.gameState && !localStorage.welcomeBackMessage) {
+if(localStorage.gameState/* && !localStorage.welcomeBackMessage*/) {
   localStorage.welcomeBackMessage = true;
   window.septle.aside.show("welcomeBack");
 }
