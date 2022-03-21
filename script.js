@@ -160,6 +160,7 @@ window.septle = {
       });
       if (!window.dictionary.includes(guessWord.toUpperCase()) && word != guessWord) {
         alert("Not in word list!");
+        row.classList.add("invalid");
         return;
       }
       // add to board state

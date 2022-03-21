@@ -225,6 +225,32 @@ td.filled:nth-child(6) {animation-delay: calc(5 * var(--half));}
 td.filled:nth-child(7) {animation-delay: calc(6 * var(--half));}
 td.filled:nth-child(8) {animation-delay: calc(7 * var(--half));}
 
+tr.current.invalid {
+  animation: Shake 600ms;
+}
+@keyframes Shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
 section.keyboard {
   height: var(--keyboard-height);
   width: 100%;
