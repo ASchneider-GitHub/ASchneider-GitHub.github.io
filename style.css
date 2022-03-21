@@ -41,6 +41,10 @@
   --opacity-50: rgba(0, 0, 0, 0.8);
   --color-absent: var(--color-tone-4);
 }
+.contrast {
+  --green: var(--orange);
+  --yellow: var(--blue);
+}
 :root {
   --color-absent: var(--color-tone-2);
   --key-bg: var(--color-tone-4);
@@ -365,6 +369,8 @@ aside#home div:is(.complete, .fail) button.board {
 aside button:before {
   font-weight: bold;
   font-family: arial, "Font Awesome 6 Pro", "Font Awesome 6 Brands";
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 aside button.play:before {
   content: "\f144  Play Now";

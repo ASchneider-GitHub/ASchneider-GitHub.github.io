@@ -313,10 +313,20 @@ window.septle = {
         if(!allCorrect) {
           tries = "X";
         }
+        let gameNames = {
+          "septle": "Septle",
+          "six": "Bonus",
+          "nytimes": "Wordle"
+        }
+        let all = "";
+        if(tries > 0) {
+          all = "\n\n" + gameNames[listName] + ": " + tries + "/" + max + "\n" + emojiString;
+        }
         shareContent[listName] = {
           "emojis":emojiString,
           "tries":tries,
-          "max":max
+          "max":max,
+          "all":all
         }
         max++;
       });
@@ -328,7 +338,7 @@ window.septle = {
       // generate full sharing string
       let streak = this.load()["streak"];
       shareContent["day"] = dayNumber;
-      shareContent["all"] = "#Septle " + dayNumber + " - " + streak + " day streak - septle.com\n\nWordle: " + shareContent["nytimes"]["tries"] + "/" + shareContent["nytimes"]["max"] + "\n" + shareContent["nytimes"]["emojis"] + "\nSix-letter Bonus: " + shareContent["six"]["tries"] + "/" + shareContent["six"]["max"] + "\n" + shareContent["six"]["emojis"] + "\nSeptle: " + shareContent["septle"]["tries"] + "/" + shareContent["septle"]["max"] + "\n" + shareContent["septle"]["emojis"];
+      shareContent["all"] = "#Septle " + dayNumber + " - " + streak + " day streak - septle.com" + shareContent["septle"]["all"] + shareContent["bonus"]["all"] + shareContent["nytimes"]["all"];
       shareContent["tweet"] = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareContent["all"]);
       shareContent["facebook"] = "https://www.facebook.com/sharer/sharer.php?u=septle.com&quote=Paste your score";
       return shareContent;
@@ -348,8 +358,8 @@ window.septle = {
     },
     url: function(type) {
       this.copy();
-      let emojisURL = this.fetchEmojis()[type];
-      let opened = window.open(emojis);
+      let url = this.fetchEmojis()[type];
+      let opened = window.open(url);
       if(opened == null || typeof(opened) == undefined) {
         alert("Popup was blocked by your browser!")
       }
@@ -503,6 +513,9 @@ window.septle = {
   theme: {
     toggle: function() {
       localStorage.darkTheme = document.body.classList.toggle("dark");
+    },
+    contrast: function() {
+      localStorage.contrastTheme = document.body.classList.toggle("contrast");
     },
     load: function() {
       if(localStorage.darkTheme && localStorage.darkTheme == "true") {
