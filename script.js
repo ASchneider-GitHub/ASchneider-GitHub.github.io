@@ -350,7 +350,7 @@ window.septle = {
       this.copy();
       let emojisURL = this.fetchEmojis()[type];
       let opened = window.open(emojis);
-      if(!opened) {
+      if(opened == null || typeof(opened) == undefined) {
         alert("Popup was blocked by your browser!")
       }
     },
