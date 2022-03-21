@@ -394,7 +394,7 @@ window.septle = {
         stats["fail"] += oldStats["gamesPlayed"] - oldStats["gamesWon"];
         let distValues = Object.values(oldStats["guesses"]);
         for(var i=0; i<8; i++) {
-          stats["distribution"][i] = distValues[i];
+          stats["distribution"][i] += distValues[i];
         }
         alert("Streak carried over!");
         localStorage.importedStatistics = true;
