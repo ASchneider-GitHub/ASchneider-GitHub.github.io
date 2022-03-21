@@ -379,13 +379,16 @@ aside button.stats:before {
   content: "\e473  See Stats";
 }
 aside button.share:before {
-  content: "\e09a  Share";
+  content: "\e09a";
 }
 aside button.copy:before {
-  content: "\f0c5  Copy";
+  content: "\f0c5";
 }
 aside button.twitter:before {
-  content: "\f099  Tweet";
+  content: "\f099";
+}
+aside button.facebook:before {
+  content: "\f09a";
 }
 aside button:is(.share, .stats, .twitter, .info) {
   color: white;
