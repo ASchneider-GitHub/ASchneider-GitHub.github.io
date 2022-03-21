@@ -385,6 +385,18 @@ window.septle = {
         "lastStreak":0
       };
       let stats = localStorage.septleStats || JSON.stringify(basicStats);
+      if(localStorage.statistics && !localStorage.importedStatistics) {
+        let oldStats = JSON.parse(localStorage.statistics);
+        stats["streak"] += oldStats["currentStreak"];
+        stats["win"] += oldStats["gamesWon"];
+        stats["fail"] += oldStats["gamesPlayed"] - oldStats["gamesWon"];
+        let distValues = Object.values(oldStats["guesses"]);
+        for(var i=0; i<8; i++) {
+          stats["distribution"][i] = distValues[i];
+        }
+        alert("Streak carried over!");
+        localStorage.importedStatistics = true;
+      }
       localStorage.septleStats = stats;
       stats = JSON.parse(stats);
       // do visual updates
