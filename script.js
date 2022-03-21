@@ -320,7 +320,7 @@ window.septle = {
         }
         let all = "";
         if(tries != 0) {
-          all = "\n\n" + gameNames[listName] + ": " + tries + "/" + max + "\n" + emojiString;
+          all = "\n" + gameNames[listName] + ": " + tries + "/" + max + "\n" + emojiString;
         }
         shareContent[listName] = {
           "emojis":emojiString,
@@ -338,7 +338,7 @@ window.septle = {
       // generate full sharing string
       let streak = this.load()["streak"];
       shareContent["day"] = dayNumber;
-      shareContent["all"] = "#Septle " + dayNumber + " - " + streak + " day streak - septle.com" + shareContent["septle"]["all"] + shareContent["six"]["all"] + shareContent["nytimes"]["all"];
+      shareContent["all"] = "#Septle " + dayNumber + " - " + streak + " day streak - septle.com\n" + shareContent["septle"]["all"] + shareContent["six"]["all"] + shareContent["nytimes"]["all"];
       shareContent["tweet"] = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareContent["all"]);
       shareContent["facebook"] = "https://www.facebook.com/sharer/sharer.php?u=septle.com&quote=Paste your score";
       return shareContent;
