@@ -388,7 +388,7 @@ aside button.twitter:before {
   content: "\f099";
 }
 aside button.facebook:before {
-  content: "\f09a";
+  content: "\f39e";
 }
 aside button:is(.share, .stats, .twitter, .info) {
   color: white;
@@ -401,6 +401,9 @@ aside button.info {
 }
 aside button.twitter {
   background: rgb(29, 155, 240);
+}
+aside button.facebook {
+  background: #39569c;
 }
 
 /* Move arc to not obscure keyboard */
