@@ -319,7 +319,7 @@ window.septle = {
           "nytimes": "Wordle"
         }
         let all = "";
-        if(tries > 0) {
+        if(tries != 0) {
           all = "\n\n" + gameNames[listName] + ": " + tries + "/" + max + "\n" + emojiString;
         }
         shareContent[listName] = {
