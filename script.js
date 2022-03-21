@@ -385,6 +385,8 @@ window.septle = {
         "lastStreak":0
       };
       let stats = localStorage.septleStats || JSON.stringify(basicStats);
+      stats = JSON.parse(stats);
+      // if coming over from old version
       if(localStorage.statistics && !localStorage.importedStatistics) {
         let oldStats = JSON.parse(localStorage.statistics);
         stats["streak"] += oldStats["currentStreak"];
@@ -397,8 +399,8 @@ window.septle = {
         alert("Streak carried over!");
         localStorage.importedStatistics = true;
       }
-      localStorage.septleStats = stats;
-      stats = JSON.parse(stats);
+      // save any changes
+      localStorage.septleStats = JSON.stringify(stats);
       // do visual updates
       this.distribution(stats);
       this.todayScores();
