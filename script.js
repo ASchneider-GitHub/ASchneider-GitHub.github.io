@@ -160,7 +160,7 @@ window.septle = {
       });
       if (!window.dictionary.includes(guessWord.toUpperCase()) && word != guessWord) {
         alert("Not in word list!");
-        row.classList.add("invalid");
+        row.classList.add("invalid");setTimeout(function(){row.classList.remove("invalid")},600);
         return;
       }
       // add to board state
@@ -240,6 +240,7 @@ window.septle = {
       // end saving
     } else {
       alert("Not enough letters!");
+      row.classList.add("invalid");setTimeout(function(){row.classList.remove("invalid")},600);
     }
   },
   deleteLetter: function () {
