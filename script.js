@@ -346,6 +346,14 @@ window.septle = {
         this.copy();
       }
     },
+    url: function(type) {
+      this.copy();
+      let emojisURL = this.fetchEmojis()[type];
+      let opened = window.open(emojis);
+      if(!opened) {
+        alert("Popup was blocked by your browser!")
+      }
+    },
     updateStreak: function(won, answerCount) {
       let offset = window.septle.getWord()["dayOffset"];
       let stats = this.load();
