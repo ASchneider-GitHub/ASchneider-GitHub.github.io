@@ -521,6 +521,9 @@ window.septle = {
       if(localStorage.darkTheme && localStorage.darkTheme == "true") {
         document.body.classList.add("dark");
       }
+      if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
+        document.body.classList.add("contrast");
+      }
     }
   },
   initialDay: 0
