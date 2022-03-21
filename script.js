@@ -349,7 +349,7 @@ window.septle = {
       let shareText = this.fetchEmojis()["all"];
       navigator.clipboard.writeText(shareText);
       alert("Copied results to clipboard!");
-      gtag("event", "share");
+      gtag({"event":"share"});
     },
     share: function() {
       let shareText = this.fetchEmojis()["all"];
@@ -366,19 +366,19 @@ window.septle = {
       if(opened == null || typeof(opened) == undefined) {
         alert("Popup was blocked by your browser!")
       }
-      gtag("event", type);
+      gtag({"event":type});
     },
     updateStreak: function(won, answerCount) {
       let offset = window.septle.getWord()["dayOffset"];
       let stats = this.load();
       if(won == true) {
         stats["win"]++;
-        gtag("event", "win");
+        gtag({"event":"win"});
       } else if(won == "test") {
         // do nothing with the win count
       } else {
         stats["fail"]++;
-        gtag("event", "fail");
+        gtag({"event":"fail"});
       }
       if(answerCount) {
         stats["distribution"][answerCount-1]++;
