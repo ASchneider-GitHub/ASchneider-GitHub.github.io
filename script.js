@@ -365,16 +365,10 @@ window.septle = {
         }
         let completedToday = 0, solvedToday = 0;
         let board = window.septle.getBoard();
-        ["septle","nytimes","six"].forEach(listName => {
-          completedToday++;
-          if(board[listName]["solved"] == true) {
-            solvedToday++;
-          }
-        });
-        if(solvedToday == 3) {
+        if(board["septle"]["solved"] == true) {
           stats["streak"]++;
           stats["lastStreak"] = offset;
-        } else if(won != "test" && won != true) {
+        } else if(board["septle"]["solved"] == "fail") {
           stats["streak"] = 0;
           stats["lastStreak"] = offset;
         }
