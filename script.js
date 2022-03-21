@@ -330,7 +330,7 @@ window.septle = {
       shareContent["day"] = dayNumber;
       shareContent["all"] = "#Septle " + dayNumber + " - " + streak + " day streak - septle.com\n\nWordle: " + shareContent["nytimes"]["tries"] + "/" + shareContent["nytimes"]["max"] + "\n" + shareContent["nytimes"]["emojis"] + "\nSix-letter Bonus: " + shareContent["six"]["tries"] + "/" + shareContent["six"]["max"] + "\n" + shareContent["six"]["emojis"] + "\nSeptle: " + shareContent["septle"]["tries"] + "/" + shareContent["septle"]["max"] + "\n" + shareContent["septle"]["emojis"];
       shareContent["tweet"] = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareContent["all"]);
-      shareContent["facebook"] = "https://www.facebook.com/sharer/sharer.php?u=septle.com&quote=" + encodeURIComponent(shareContent["all"]);
+      shareContent["facebook"] = "https://www.facebook.com/sharer/sharer.php?u=septle.com&quote=Paste your score";
       return shareContent;
     },
     copy: function() {

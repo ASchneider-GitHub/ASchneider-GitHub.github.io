@@ -390,7 +390,7 @@ aside button.twitter:before {
 aside button.facebook:before {
   content: "\f39e";
 }
-aside button:is(.share, .stats, .twitter, .info) {
+aside button:is(.share, .stats, .twitter, .facebook, .info) {
   color: white;
 }
 aside button:is(.share, .stats) {
