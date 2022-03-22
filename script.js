@@ -482,6 +482,7 @@ window.septle = {
           key.setAttribute("onclick", "window.septle.keyboardListener.builtIn(this)");
         });
         this.enabled = true;
+        gtag("event","start");
       }
     },
     builtIn: function(what) {
