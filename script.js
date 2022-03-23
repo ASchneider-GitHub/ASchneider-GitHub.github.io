@@ -118,10 +118,17 @@ window.septle = {
     show: function(id) {
       this.hideAll();
       document.querySelector("aside#" + id).classList.add("show");
+      let button = document.querySelector(".icon button." + id);
+      if(button) {
+        button.classList.add("active");
+      }
     },
     hideAll: function() {
       document.querySelectorAll("aside").forEach(aside => {
         aside.classList.remove("show");
+      });
+      document.querySelectorAll(".icon button").forEach(aside => {
+        aside.classList.remove("active");
       });
     }
   },
@@ -551,7 +558,7 @@ document.addEventListener("focus", function(){
 });
 
 // check to see if coming from nytimes version
-if(localStorage.gameState/* && !localStorage.welcomeBackMessage*/) {
+if(localStorage.gameState && !localStorage.welcomeBackMessage) {
   localStorage.welcomeBackMessage = true;
   window.septle.aside.show("welcomeBack");
 }

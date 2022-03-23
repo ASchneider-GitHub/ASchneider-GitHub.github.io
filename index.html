@@ -18,13 +18,13 @@ gtag('config', 'G-X4SN7QKEYV');
 <!-- FB Meta Tags -->
 <meta property="og:url" content="https://septle.com">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Septle - A harder daily word game">
+<meta property="og:title" content="Septle - a seven letter word game">
 <meta property="og:description" content="Guess the hidden word in 8 tries. A new puzzle is available each day.">
 <meta property="og:image" content="https://septle.com/content.png">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="vanceagher.github.io">
+<meta property="twitter:domain" content="septle.com">
 
 <meta name="theme-color" content="#6aaa64" />
 <link rel="manifest" href="manifest.json" />
@@ -39,13 +39,13 @@ gtag('config', 'G-X4SN7QKEYV');
 <main>
   <header>
     <div class="icon">
-      <button class="fa-solid fa-house-chimney" onclick="window.septle.aside.show('home');"></button>
-      <button class="fa-solid fa-chart-simple" onclick="window.septle.aside.show('statistics');"></button>
+      <button class="fa-solid fa-house-chimney home active" onclick="window.septle.aside.show('home');"></button>
+      <button class="fa-solid fa-chart-simple statistics" onclick="window.septle.aside.show('statistics');"></button>
     </div>
     <h1>SEPTLE #<span id="dayNumber">0</span></h1>
     <div class="icon">
-      <button class="fa-duotone fa-eclipse" onclick="window.septle.theme.toggle();"></button>
-      <button class="fa-solid fa-gem" id="arc-space" style="visibility: hidden; display:none;"></button>
+      <button class="fa-solid fa-gear settings" onclick="window.septle.aside.show('settings');"></button>
+      <button class="fa-solid fa-gem" id="arc-space" style="visibility:hidden;display:none;"></button>
     </div>
   </header>
   <section class="board">
@@ -101,7 +101,7 @@ gtag('config', 'G-X4SN7QKEYV');
     <button onclick="window.septle.start(this);" class="board"></button>
   </div>
   <div id="six">
-    <h2>Bonus word: <span class="status"></span></h2>
+    <h2>Six-letter Bonus: <span class="status"></span></h2>
     <button onclick="window.septle.start(this);" class="play"></button>
     <button onclick="window.septle.start(this);" class="board"></button>
   </div>
@@ -113,7 +113,7 @@ gtag('config', 'G-X4SN7QKEYV');
   <br>
   <span class="halfButtons">
     <button onclick="window.septle.aside.show('info');" class="info"></button>
-    <button onclick="window.septle.aside.show('statistics');" class="stats"></button>
+    <button onclick="window.septle.aside.show('statistics');" class="openStats"></button>
   </span>
 </aside>
 <aside id="statistics">
@@ -150,10 +150,21 @@ gtag('config', 'G-X4SN7QKEYV');
     <button class="copy" onclick="septle.statistics.copy()"></button>
   </span>
 </aside>
+<aside id="settings">
+  <h1>Settings</h1>
+  <p>More options coming soon!</p>
+  <br>
+  <button class="darkEnabled" onclick="window.septle.theme.toggle();">Dark Mode:&nbsp;</button>
+  <br><br>
+  <button class="contrastEnabled" onclick="window.septle.theme.contrast();">Colorblind Mode:&nbsp;</button>
+</aside>
 <aside id="info">
   <h1>Info</h1>
   <p>Coming soon!</p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">Leave feedback</a>
+  <p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">Leave feedback</a> or
+    <a href="mailto:support@septle.com" target="_blank">Email us</a> (quicker response)
+  </p>
 </aside>
 <aside id="welcomeBack">
   <h1>We're working on it!</h1>

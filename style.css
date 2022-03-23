@@ -45,6 +45,12 @@
   --green: var(--orange);
   --yellow: var(--blue);
 }
+.contrastEnabled::after, .darkEnabled::after {
+  content: "Disabled";
+}
+.contrast .contrastEnabled::after, .dark .darkEnabled::after {
+  content: "Enabled";
+}
 :root {
   --color-absent: var(--color-tone-2);
   --key-bg: var(--color-tone-4);
@@ -122,9 +128,15 @@ div.icon:last-child {
 }
 div.icon button {
   padding: 10px 7.5px;
+  padding-bottom: 15px;
+  border-radius: 10px 10px 0 0;
   font-size: 20px;
   background: transparent;
   border: none;
+}
+div.icon button.active {
+  background: var(--color-tone-7);
+  color: var(--color-tone-1);
 }
 
 section.board {
@@ -407,8 +419,8 @@ aside button.board:before {
 aside button.info:before {
   content: "\f05a  Info";
 }
-aside button.stats:before {
-  content: "\e473  See Stats";
+aside button.openStats:before {
+  content: "\e473  See Stats and Share";
 }
 aside button.share:before {
   content: "\e09a";
@@ -422,11 +434,14 @@ aside button.twitter:before {
 aside button.facebook:before {
   content: "\f39e";
 }
-aside button:is(.share, .stats, .twitter, .facebook, .info) {
+aside button:is(.share, .openStats, .twitter, .facebook, .info) {
   color: white;
 }
-aside button:is(.share, .stats) {
+aside button:is(.share, .openStats) {
   background: var(--green);
+}
+aside button.openStats {
+  width: 100% !important;
 }
 aside button.info {
   background: var(--yellow);
