@@ -543,7 +543,7 @@ window.septle = {
     },
     updateBrowser: function() {
       let color = "#6aaa64";
-      if(localStorage.contrastTheme && localStorage.contrastTheme == true) {
+      if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
         color = "#f5793a";
       }
       document.querySelector('[name="theme-color"]').setAttribute("content",color);
