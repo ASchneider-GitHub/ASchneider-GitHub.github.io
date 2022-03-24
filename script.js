@@ -297,6 +297,10 @@ window.septle = {
         "present":"🟨",
         "absent":"⬜"
       }
+      if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
+        emojis["correct"] = "🟧";
+        emojis["present"] = "🟦";
+      }
       let originalList = septle.listName;
       let wordLists = ["nytimes","six","septle"];
       wordLists.forEach(listName => {
