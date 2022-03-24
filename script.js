@@ -546,7 +546,7 @@ window.septle = {
       if(localStorage.contrastTheme && localStorage.contrastTheme == true) {
         color = "#f5793a";
       }
-      document.querySelector('name="theme-color"').setAttribute("content",color);
+      document.querySelector('[name="theme-color"]').setAttribute("content",color);
     }
   },
   initialDay: 0
