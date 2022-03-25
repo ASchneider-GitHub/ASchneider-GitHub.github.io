@@ -1,5 +1,5 @@
 window.dictionary = [];
-fetch("dictionary.json")
+fetch("shortened.json")
 .then((x) => x.json())
 .then((words) => {
   window.dictionary = words;
