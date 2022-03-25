@@ -319,6 +319,8 @@ aside {
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s, background 0.3s, color 0.3s;
   padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 @media (max-width: 500px) {
   aside {

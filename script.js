@@ -1,10 +1,10 @@
 window.dictionary = [];
 fetch("dictionary.json")
-  .then((x) => x.json())
-  .then((words) => {
-    window.dictionary = words;
-    document.querySelector("html").classList.remove("loading");
-  });
+.then((x) => x.json())
+.then((words) => {
+  window.dictionary = words;
+  document.querySelector("html").classList.remove("loading");
+});
 
 window.septle = {
   firstDay: new Date(2022, 2, 1, 0, 0, 0, 0),
@@ -20,8 +20,8 @@ window.septle = {
     this.listName = list;
     let dayOffset = Math.round(
       (new Date().setHours(0, 0, 0, 0) -
-        new Date(this.firstDay).setHours(0, 0, 0, 0)) /
-        864e5
+      new Date(this.firstDay).setHours(0, 0, 0, 0)) /
+      864e5
     );
     document.querySelector("#dayNumber").innerText = dayOffset + 1 + 254; // adjusted to be same as actual wordle
     let word = this.wordList[list][dayOffset % this.wordList[list].length];
@@ -537,13 +537,23 @@ window.septle = {
       this.updateBrowser();
     },
     load: function() {
-      if(localStorage.darkTheme && localStorage.darkTheme == "true") {
+      if(localStorage.darkTheme && localStorage.darkTheme == "true" || window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.body.classList.add("dark");
+        localStorage.darkTheme == "true";
       }
       if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
         document.body.classList.add("contrast");
         this.updateBrowser();
       }
+      window.matchMedia("(prefers-color-scheme: dark)").addListener(e => {
+        if (e.matches) {
+          document.body.classList.add("dark");
+          localStorage.darkTheme == "true";
+        } else {
+          document.body.classList.remove("dark");
+          localStorage.darkTheme == "false";
+        }
+      });
     },
     updateBrowser: function() {
       let color = "#6aaa64";
