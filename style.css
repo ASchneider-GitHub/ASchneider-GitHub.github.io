@@ -536,7 +536,7 @@ div.loadScreen img, div.landscape i {
   border-radius: 5px;
   box-shadow: 0 0 50px #99999999;
   animation: spinner 4s linear infinite;
-  border-radius: 25%;
+  border-radius: 20%;
 }
 div.landscape i {
   margin-top: 50px;
