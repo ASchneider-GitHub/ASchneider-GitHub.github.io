@@ -7,6 +7,7 @@
   --rows: 8;
 }
 :root {
+  --purple: #21123b;
   --green: #6aaa64;
   --darkendGreen: #538d4e;
   --yellow: #c9b458;
@@ -104,7 +105,7 @@ header {
   left: 0;
   width: 100%;
   height: 50px;
-  background: var(--green);
+  background: var(--purple);
   color: whitesmoke;
 }
 header :is(button, h1) {
@@ -117,7 +118,7 @@ div.icon {
   top: 5px;
 }
 div.icon button {
-  color: #111;
+  color: #aaa;
   cursor: pointer;
 }
 div.icon:first-child {
@@ -520,7 +521,7 @@ div.loadScreen, div.landscape {
   display: block;
   width: 100%;
   height: 100%;
-  background: var(--green);
+  background: var(--purple);
   color: white;
   text-align: center;
   transition: bottom 0.5s 1s;
@@ -535,6 +536,7 @@ div.loadScreen img, div.landscape i {
   border-radius: 5px;
   box-shadow: 0 0 50px #99999999;
   animation: spinner 4s linear infinite;
+  border-radius: 25%;
 }
 div.landscape i {
   margin-top: 50px;

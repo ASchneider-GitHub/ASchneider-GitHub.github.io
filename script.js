@@ -534,7 +534,6 @@ window.septle = {
     },
     contrast: function() {
       localStorage.contrastTheme = document.body.classList.toggle("contrast");
-      this.updateBrowser();
     },
     load: function() {
       if(localStorage.darkTheme && localStorage.darkTheme == "true" || window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -543,7 +542,6 @@ window.septle = {
       }
       if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
         document.body.classList.add("contrast");
-        this.updateBrowser();
       }
       window.matchMedia("(prefers-color-scheme: dark)").addListener(e => {
         if (e.matches) {
@@ -554,13 +552,6 @@ window.septle = {
           localStorage.darkTheme = "false";
         }
       });
-    },
-    updateBrowser: function() {
-      let color = "#6aaa64";
-      if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
-        color = "#f5793a";
-      }
-      document.querySelector('[name="theme-color"]').setAttribute("content",color);
     }
   },
   initialDay: 0
