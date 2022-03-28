@@ -108,7 +108,7 @@ header {
   background: var(--purple);
   color: whitesmoke;
 }
-header :is(button, h1) {
+header button, header h1 {
   font-size: 30px;
   padding: 5px;
   margin: 0;
@@ -196,7 +196,7 @@ td {
 td[data-state="tbd"] {
   border: 2px solid var(--color-tone-3);
 }
-:is(td, button).filled {
+td.filled, button.filled {
   --duration: 0.5s;
   --half: calc(var(--duration) / 12);
   animation-name: fill;
@@ -401,10 +401,10 @@ aside button strong {
   font-size: 26px;
   margin-bottom: 5px;
 }
-aside#home div button.board, aside#home div:is(.complete, .fail) button.play {
+aside#home div button.board, aside#home div.complete button.play, aside#home div.fail button.play {
   display: none;
 }
-aside#home div:is(.complete, .fail) button.board {
+aside#home div.complete button.board, aside#home div.fail button.board {
   display: block;
 }
 aside button:before {
@@ -437,10 +437,10 @@ aside button.twitter:before {
 aside button.facebook:before {
   content: "\f39e";
 }
-aside button:is(.share, .openStats, .twitter, .facebook, .info) {
+aside button.share, aside button.openStats, aside button.twitter, aside button.facebook, aside button.info {
   color: white;
 }
-aside button:is(.share, .openStats) {
+aside button.share, aside button.openStats {
   background: var(--green);
 }
 aside button.openStats {
@@ -474,7 +474,7 @@ div#alertBox {
   max-height: 190px;
   overflow-x: hidden;
   overflow-y: auto;
-  background: var(--green);
+  background: var(--purple);
   z-index: 3;
   border-radius: 0 0 10px 10px;
 }
