@@ -297,9 +297,16 @@ window.septle = {
         "present":"🟨",
         "absent":"⬜"
       }
+      if(localStorage.aprilFools && localStorage.aprilFools == "true") {
+        emojis["correct"] = "🟪";
+        emojis["absent"] = "🟫";
+      }
       if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
         emojis["correct"] = "🟧";
         emojis["present"] = "🟦";
+      }
+      if(localStorage.darkTheme && localStorage.darkTheme == "true") {
+        emojis["absent"] = "⬛️";
       }
       let originalList = septle.listName;
       let wordLists = ["nytimes","six","septle"];
@@ -535,10 +542,16 @@ window.septle = {
     contrast: function() {
       localStorage.contrastTheme = document.body.classList.toggle("contrast");
     },
+    aprilFools: function() {
+      localStorage.aprilFools = document.body.classList.toggle("aprilFools");
+    },
     load: function() {
       if(localStorage.darkTheme && localStorage.darkTheme == "true" || window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.body.classList.add("dark");
         localStorage.darkTheme = "true";
+      }
+      if(localStorage.aprilFools && localStorage.aprilFools == "true") {
+        document.body.classList.add("aprilFools");
       }
       if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
         document.body.classList.add("contrast");
@@ -571,11 +584,26 @@ document.addEventListener("focus", function(){
   }
 });
 
+/* Messages */
+// april fools message
+let dayOffsetValue = window.septle.getWord()["dayOffset"];
+if(dayOffsetValue >= 31) {
+  document.querySelector(".aprilFoolsEnabled").style.display = "block";
+  if(!localStorage.monthlyMessage || localStorage.monthlyMessage != "april") {
+    localStorage.monthlyMessage = "april";
+    window.septle.theme.aprilFools();
+    if(dayOffsetValue != 31) {
+      document.querySelector("#monthlyMessage h1 span").style.display = "none";
+    }
+    window.septle.aside.show("monthlyMessage");
+  }
+}
 // check to see if coming from nytimes version
 if(localStorage.gameState && !localStorage.welcomeBackMessage) {
   localStorage.welcomeBackMessage = true;
   window.septle.aside.show("welcomeBack");
 }
+
 
 if (window.self === window.top) {
   // if not loaded in frame, add arc

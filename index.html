@@ -156,6 +156,8 @@ gtag('config', 'G-X4SN7QKEYV');
   <button class="darkEnabled" onclick="window.septle.theme.toggle();">Dark Mode:&nbsp;</button>
   <br><br>
   <button class="contrastEnabled" onclick="window.septle.theme.contrast();">Colorblind Mode:&nbsp;</button>
+  <br><br>
+  <button class="aprilFoolsEnabled" onclick="window.septle.theme.aprilFools();">April Theme:&nbsp;</button>
 </aside>
 <aside id="info">
   <h1>Info</h1>
@@ -176,9 +178,19 @@ gtag('config', 'G-X4SN7QKEYV');
   <p>We appreaciate all who have given us <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">feedback</a>. Let us know if there are more problems.</p>
   <button onclick="window.septle.aside.show('home');">Continue to new version!</button>
 </aside>
+<aside id="monthlyMessage">
+  <h1 style="color:var(--pink)">Happy April<span> Fools Day</span>!</h1>
+  <p>We've switched up the colors a little bit to be more sping like!</p>
+  <p>Colorblind and dark mode still exist, and if you don't like the new colors you can turn them off in <a onclick="window.septle.aside.show('settings')">settings</a>.</p>
+  <br><br><br><br><br><br><br><br><br><br>
+  <button onclick="window.septle.aside.show('home');">Continue</button>
+</aside>
 
 <!--alert section -->
 <div id="alertBox"></div>
+
+<!--April Fools day flower-->
+<img id="fools" style="position:fixed;" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsweetclipart.com%2Fmultisite%2Fsweetclipart%2Ffiles%2Fdaisy_pink_2.png&f=1&nofb=1"></img>
 
 <!-- Loading Screen -->
 <div class="loadScreen">

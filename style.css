@@ -7,7 +7,6 @@
   --rows: 8;
 }
 :root {
-  --purple: #21123b;
   --green: #6aaa64;
   --darkendGreen: #538d4e;
   --yellow: #c9b458;
@@ -19,6 +18,10 @@
   --black: #212121;
   --orange: #f5793a;
   --blue: #85c0f9;
+  --purple: #21123b;
+  --light-pink: #ffe6ea;
+  --pink: #e06377;
+  --brown: #a95c35;
 }
 :root {
   --color-tone-1: #1a1a1b;
@@ -46,10 +49,25 @@
   --green: var(--orange);
   --yellow: var(--blue);
 }
-.contrastEnabled::after, .darkEnabled::after {
+
+/* April Fools Special!! */
+.aprilFools {
+  --yellow: var(--pink);
+  --color-absent: var(--brown) !important;
+    background: pink;
+}
+.aprilFools table.squares td {
+  background: var(--light-pink);
+  border: none !important;
+}
+.aprilFoolsEnabled {
+  display: none;
+}
+
+.contrastEnabled::after, .darkEnabled::after, .aprilFoolsEnabled::after {
   content: "Disabled";
 }
-.contrast .contrastEnabled::after, .dark .darkEnabled::after {
+.contrast .contrastEnabled::after, .dark .darkEnabled::after, .aprilFools .aprilFoolsEnabled::after {
   content: "Enabled";
 }
 :root {
@@ -87,6 +105,12 @@ body {
   height: -webkit-fill-available;
   /* Prevent font scaling in landscape while allowing user zoom */
   -webkit-text-size-adjust: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: inherit;
 }
 
 main {
