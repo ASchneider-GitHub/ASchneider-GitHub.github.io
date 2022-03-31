@@ -512,11 +512,11 @@ div#alertBox span {
   margin: 10px auto;
   padding: 10px;
   font-size: 15px;
-  height: 35px;
   border-radius: 5px;
   text-align: center;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
+  height: auto/*35px*/;
 }
 
 /* Loading Screen */

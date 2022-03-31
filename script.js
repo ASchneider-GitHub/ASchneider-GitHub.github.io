@@ -4,7 +4,17 @@ fetch("shortened.json")
 .then((words) => {
   window.dictionary = words;
   document.querySelector("html").classList.remove("loading");
+}).catch(error => {
+  dictionaryFallback();
 });
+function dictionaryFallback() {
+  fetch("https://ifiles.ga/p/dictionary.json")
+  .then((x) => x.json())
+  .then((words) => {
+    window.dictionary = words;
+    document.querySelector("html").classList.remove("loading");
+  });
+}
 
 window.septle = {
   firstDay: new Date(2022, 2, 1, 0, 0, 0, 0),
@@ -589,6 +599,9 @@ document.addEventListener("focus", function(){
 let dayOffsetValue = window.septle.getWord()["dayOffset"];
 if(dayOffsetValue >= 31) {
   document.querySelector(".aprilFoolsEnabled").style.display = "block";
+  if(dayOffsetValue == 31) {
+    document.querySelectorAll(".foolsDay").forEach(image => {image.style.display = "block"});
+  }
   if(!localStorage.monthlyMessage || localStorage.monthlyMessage != "april") {
     localStorage.monthlyMessage = "april";
     window.septle.theme.aprilFools();
