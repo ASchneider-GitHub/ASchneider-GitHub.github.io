@@ -308,7 +308,7 @@ window.septle = {
         "absent":"⬜"
       }
       if(localStorage.aprilFools && localStorage.aprilFools == "true") {
-        emojis["correct"] = "🟪";
+        emojis["present"] = "🟪";
         emojis["absent"] = "🟫";
       }
       if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
