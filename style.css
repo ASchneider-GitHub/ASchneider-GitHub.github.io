@@ -60,9 +60,6 @@
   background: var(--light-pink);
   border: none !important;
 }
-.aprilFoolsEnabled {
-  display: none;
-}
 
 .contrastEnabled::after, .darkEnabled::after, .aprilFoolsEnabled::after {
   content: "Disabled";

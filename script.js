@@ -596,17 +596,12 @@ document.addEventListener("focus", function(){
 
 /* Messages */
 // april fools message
-let dayOffsetValue = window.septle.getWord()["dayOffset"];
-if(dayOffsetValue >= 31) {
-  document.querySelector(".aprilFoolsEnabled").style.display = "block";
-  if(dayOffsetValue == 31) {
-    document.querySelectorAll(".foolsDay").forEach(image => {image.style.display = "block"});
-  }
-  if(dayOffsetValue == 31 && (!localStorage.monthlyMessage || localStorage.monthlyMessage != "april")) {
-    localStorage.monthlyMessage = "april";
-    window.septle.theme.aprilFools();
-    window.septle.aside.show("monthlyMessage");
-  }
+if(!localStorage.monthlyMessage || localStorage.monthlyMessage != "aprilFix") {
+    localStorage.monthlyMessage = "aprilFix";
+    if(localStorage.aprilFools == "true") {
+      window.septle.theme.aprilFools();
+    }
+    //window.septle.aside.show("monthlyMessage");
 }
 // check to see if coming from nytimes version
 if(localStorage.gameState && !localStorage.welcomeBackMessage) {
