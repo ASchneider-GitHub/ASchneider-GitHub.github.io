@@ -602,12 +602,9 @@ if(dayOffsetValue >= 31) {
   if(dayOffsetValue == 31) {
     document.querySelectorAll(".foolsDay").forEach(image => {image.style.display = "block"});
   }
-  if(!localStorage.monthlyMessage || localStorage.monthlyMessage != "april") {
+  if(dayOffsetValue == 31 && (!localStorage.monthlyMessage || localStorage.monthlyMessage != "april")) {
     localStorage.monthlyMessage = "april";
     window.septle.theme.aprilFools();
-    if(dayOffsetValue != 31) {
-      document.querySelector("#monthlyMessage h1 span").style.display = "none";
-    }
     window.septle.aside.show("monthlyMessage");
   }
 }
