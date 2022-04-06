@@ -27,10 +27,10 @@ window.septle = {
     if(!list) {
       list = this.listName;
     }
+    this.listName = list;
     if(list == "practice") {
       list = "septle";
     }
-    this.listName = list;
     let dayOffset = Math.round(
       (new Date().setHours(0, 0, 0, 0) -
       new Date(this.firstDay).setHours(0, 0, 0, 0)) /
