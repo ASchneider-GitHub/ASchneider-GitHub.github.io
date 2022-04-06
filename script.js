@@ -195,8 +195,9 @@ window.septle = {
       }
       // add to board state
       simpleBoard = {};
+      let board = {};
       if(this.listName != "practice") {
-        let board = this.getBoard();
+        board = this.getBoard();
         simpleBoard = board[this.listName];
         simpleBoard["state"].push(guessWord);
       }
