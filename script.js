@@ -27,6 +27,9 @@ window.septle = {
     if(!list) {
       list = this.listName;
     }
+    if(list == "practice") {
+      list = "septle";
+    }
     this.listName = list;
     let dayOffset = Math.round(
       (new Date().setHours(0, 0, 0, 0) -
@@ -89,9 +92,7 @@ window.septle = {
     if (!word) word = this.getWord()["word"];
     this.word = word;
     let collums = word.length;
-    let rows = 8;
-    if(collums <= 5) {rows = 6}
-    if(collums == 6) {rows = 7}
+    let rows = collums + 1;
     let table = document.querySelector("table.squares");
     // clean up keyboard
     document.querySelectorAll("button.key").forEach(key => {
@@ -110,17 +111,20 @@ window.septle = {
       }
     }
     // fill in existing words
-    let simpleBoard = this.getBoard()[this.listName]; // get storage
-    simpleBoard["state"].forEach(word => {
-      word.split("").forEach(letter => {
-        this.letterPress(letter);
+    let simpleBoard = {};
+    if(this.listName != "practice") {
+      simpleBoard = this.getBoard()[this.listName]; // get storage
+      simpleBoard["state"].forEach(word => {
+        word.split("").forEach(letter => {
+          this.letterPress(letter);
+        });
+        if(silence) {
+          this.enterPress("silence");
+        } else {
+          this.enterPress(true);
+        }
       });
-      if(silence) {
-        this.enterPress("silence");
-      } else {
-        this.enterPress(true);
-      }
-    });
+    }
     // start keyboardListener
     this.keyboardListener.start();
   },
@@ -145,7 +149,7 @@ window.septle = {
   start: function(what) {
     let box = what.parentElement;
     if(box.classList.contains("halfButtons")) {
-      box = box.parentElement
+      box = box.parentElement;
     }
     let listName = box.id;
     let button = what;
@@ -157,6 +161,15 @@ window.septle = {
       this.new(word);
       this.aside.hideAll();
     }
+  },
+  practice: function(length) {
+    let word = "";
+    while(word.length != length) {
+      word = window.dictionary[Math.round(Math.random() * window.dictionary.length)];
+    }
+    this.listName = "practice";
+    this.new(word);
+    this.aside.hideAll();
   },
   enterPress: function (nosave) {
     let cell, row;
@@ -181,9 +194,12 @@ window.septle = {
         return;
       }
       // add to board state
-      let board = this.getBoard();
-      let simpleBoard = board[this.listName];
-      simpleBoard["state"].push(guessWord);
+      simpleBoard = {};
+      if(this.listName != "practice") {
+        let board = this.getBoard();
+        simpleBoard = board[this.listName];
+        simpleBoard["state"].push(guessWord);
+      }
       // end of adding
       document.querySelectorAll(".squares tr.current td").forEach((cell) => {
         let letter = cell.innerText.toUpperCase();
@@ -224,9 +240,10 @@ window.septle = {
       // check for winners
       if (guessWord == word) {
         // they won!
+        let homeScreen = septle.listName == "practice" ? "practice" : "home";
         if(!nosave) {
           setTimeout(function(){alert("You won!");},1600);
-          setTimeout(function(){window.septle.aside.show('home');},3100);
+          setTimeout(function(){window.septle.aside.show(homeScreen);},3100);
         }
         simpleBoard["solved"] = true;
       } else if (row.nextElementSibling) {
@@ -245,7 +262,7 @@ window.septle = {
         }
       }
       // save board state
-      if(!nosave) {
+      if(!nosave && this.listName != "practice") {
         board[this.listName] = simpleBoard;
         this.saveBoard(board);
         // call functions that required data to be saved first
@@ -319,6 +336,9 @@ window.septle = {
         emojis["absent"] = "⬛️";
       }
       let originalList = septle.listName;
+      if(originalList == "practice") {
+        originalList = "septle";
+      }
       let wordLists = ["nytimes","six","septle"];
       wordLists.forEach(listName => {
         let tries = 0;
@@ -597,11 +617,11 @@ document.addEventListener("focus", function(){
 /* Messages */
 // april fools message
 if(!localStorage.monthlyMessage || localStorage.monthlyMessage != "aprilFix") {
-    localStorage.monthlyMessage = "aprilFix";
-    if(localStorage.aprilFools == "true") {
-      window.septle.theme.aprilFools();
-    }
-    //window.septle.aside.show("monthlyMessage");
+  localStorage.monthlyMessage = "aprilFix";
+  if(localStorage.aprilFools == "true") {
+    window.septle.theme.aprilFools();
+  }
+  //window.septle.aside.show("monthlyMessage");
 }
 // check to see if coming from nytimes version
 if(localStorage.gameState && !localStorage.welcomeBackMessage) {
@@ -641,5 +661,5 @@ function alert(text) {
   alertBox.appendChild(span);
   setTimeout(function(){
     span.remove();
-  },1500);
+  },2500);
 }

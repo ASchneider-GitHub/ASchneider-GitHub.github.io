@@ -92,7 +92,8 @@ gtag('config', 'G-X4SN7QKEYV');
 </main>
 
 <aside id="home" class="show">
-  <p>Septle is simply a seven letter Wordle. While you don't need to play the bonus or NYTimes word to get a streak, you can share your results all at once. Words update daily.</p>
+  <p>Septle is simply a seven letter Wordle. Bonus and NYTimes words not required to get a streak, you can share your results all at once.</p>
+  <p>Words update daily. Want more? Try <a onclick="window.septle.aside.show('practice');">practice mode</a>!</p>
   <span style="height:5px;display:block;"></span>
   <div id="septle">
     <h2>Septle: <span class="status"></span></h2>
@@ -114,6 +115,24 @@ gtag('config', 'G-X4SN7QKEYV');
     <button onclick="window.septle.aside.show('info');" class="info"></button>
     <button onclick="window.septle.aside.show('statistics');" class="openStats"></button>
   </span>
+</aside>
+<aside id="practice">
+  <h1>Practice Mode</h1>
+  <p>Not enough Septle in your day? With practice mode, you can play an unlimited amount of words.</p>
+  <p>The words are randomly picked from an English dictionary, so you might find them obscure or offensive.</p>
+  <span style="height:5px;display:block;"></span>
+  <div>
+    <h2>Seven Letter</h2>
+    <button onclick="window.septle.practice(7);" class="play"></button>
+  </div>
+  <div>
+    <h2>Six Letter</h2>
+    <button onclick="window.septle.practice(6);" class="play"></button>
+  </div>
+  <div>
+    <h2>Five Letter</h2>
+    <button onclick="window.septle.practice(5);" class="play"></button>
+  </div>
 </aside>
 <aside id="statistics">
   <h2 style="margin-top:0">Guess Distribution</h2>
@@ -151,21 +170,26 @@ gtag('config', 'G-X4SN7QKEYV');
 </aside>
 <aside id="settings">
   <h1>Settings</h1>
-  <p>More options coming soon!</p>
-  <br>
+  <p>Standard Color Schemes</p>
   <button class="darkEnabled" onclick="window.septle.theme.toggle();">Dark Mode:&nbsp;</button>
   <br><br>
   <button class="contrastEnabled" onclick="window.septle.theme.contrast();">Colorblind Mode:&nbsp;</button>
   <br><br>
-  <button class="aprilFoolsEnabled" onclick="window.septle.theme.aprilFools();">April Theme:&nbsp;</button>
+  <p>Seasonal Theme:<br>Green > Green, Yellow > Pink, Grey > Brown</p>
+  <button class="aprilFoolsEnabled" onclick="window.septle.theme.aprilFools();">Spring Theme:&nbsp;</button>
 </aside>
 <aside id="info">
-  <h1>Info</h1>
-  <p>Coming soon!</p>
+  <h1>Info  :)</h1>
+  <p>Septle is a seven letter word game based off of the New York Times' Wordle. If you don't know how to play it is recommended that you try their version first.</p>
+  <br>
   <p>
+    Have Questions or Concerns? We'd love to hear it!
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">Leave feedback</a> or
     <a href="mailto:support@septle.com" target="_blank">Email us</a> (quicker response)
   </p>
+  <br>
+  <p>&copy; Septle 2022. All rights reserved.</p>
+  <p>Wordle and the The New York Times are copyrighted properties of The New York Times Company and are not affiliated with Septle.</p>
 </aside>
 <aside id="welcomeBack">
   <h1>We're working on it!</h1>
