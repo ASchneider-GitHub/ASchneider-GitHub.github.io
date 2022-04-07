@@ -239,12 +239,15 @@ window.septle = {
       cell.classList.remove("current");
       row.classList.remove("current");
       // check for winners
+      function goHome() {
+        let homeScreen = septle.listName == "practice" ? "practice" : "home";
+        window.septle.aside.show(homeScreen);
+      }
       if (guessWord == word) {
         // they won!
-        let homeScreen = septle.listName == "practice" ? "practice" : "home";
         if(!nosave) {
           setTimeout(function(){alert("You won!");},1600);
-          setTimeout(function(){window.septle.aside.show(homeScreen);},3100);
+          setTimeout(goHome,3100);
         }
         simpleBoard["solved"] = true;
       } else if (row.nextElementSibling) {
@@ -258,7 +261,7 @@ window.septle = {
           simpleBoard["solved"] = "fail";
         }
         if(!nosave) {
-          setTimeout(function(){window.septle.aside.show('home');},3100);
+          setTimeout(goHome,3100);
           this.statistics.updateStreak(false);
         }
       }
