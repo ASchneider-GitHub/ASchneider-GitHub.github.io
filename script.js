@@ -394,6 +394,7 @@ window.septle = {
       shareContent["day"] = dayNumber;
       shareContent["all"] = "#Septle " + dayNumber + " - " + streak + " day streak - septle.com\n" + shareContent["septle"]["all"] + shareContent["six"]["all"] + shareContent["nytimes"]["all"];
       shareContent["tweet"] = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareContent["all"]);
+      shareContent["telegram"] = "https://t.me/share/url?url=https://septle.com&text=" + encodeURIComponent(shareContent["all"]);
       shareContent["facebook"] = "https://www.facebook.com/sharer/sharer.php?u=septle.com&quote=Paste your score";
       return shareContent;
     },

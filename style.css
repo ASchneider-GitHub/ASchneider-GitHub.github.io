@@ -452,13 +452,16 @@ aside button.share:before {
 aside button.copy:before {
   content: "\f0c5";
 }
+aside button.telegram:before {
+  content: "\f2c6";
+}
 aside button.twitter:before {
   content: "\f099";
 }
 aside button.facebook:before {
   content: "\f39e";
 }
-aside button.share, aside button.openStats, aside button.twitter, aside button.facebook, aside button.info {
+aside button.share, aside button.openStats, aside button.telegram, aside button.twitter, aside button.facebook, aside button.info {
   color: white;
 }
 aside button.share, aside button.openStats {
@@ -472,6 +475,10 @@ aside button.info {
 }
 aside button.twitter {
   background: rgb(29, 155, 240);
+}
+aside button.telegram {
+  background: #179cde;
+  font-size: 24px;
 }
 aside button.facebook {
   background: #39569c;
