@@ -202,6 +202,9 @@ table.squares td {
   justify-content: center;
   align-items: center;
 }
+button table.squares td {
+  font-size: 18px;
+}
 @media (max-width: 420px) {
   table.squares td {
     font-size: 26px;
