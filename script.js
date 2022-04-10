@@ -588,9 +588,6 @@ window.septle = {
     contrast: function() {
       localStorage.contrastTheme = document.body.classList.toggle("contrast");
     },
-    brightColors: function() {
-      localStorage.brightColors = document.body.classList.toggle("brightColors");
-    },
     aprilFools: function() {
       localStorage.aprilFools = document.body.classList.toggle("aprilFools");
     },
@@ -601,9 +598,6 @@ window.septle = {
       }
       if(localStorage.aprilFools && localStorage.aprilFools == "true") {
         document.body.classList.add("aprilFools");
-      }
-      if(localStorage.brightColors && localStorage.brightColors == "true") {
-        document.body.classList.add("brightColors");
       }
       if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
         document.body.classList.add("contrast");

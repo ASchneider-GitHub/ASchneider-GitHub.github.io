@@ -6,24 +6,8 @@
   --letters: 7;
   --rows: 8;
 }
-:root {
-  --green: #6aaa64;
-  --darkendGreen: #538d4e;
-  --yellow: #c9b458;
-  --darkendYellow: #b59f3b;
-  --lightGray: #d8d8d8;
-  --gray: #86888a;
-  --darkGray: #939598;
-  --white: #fff;
-  --black: #212121;
-  --orange: #f5793a;
-  --blue: #85c0f9;
-  --purple: #21123b;
-  --light-pink: #ffe6ea;
-  --pink: #e06377;
-  --brown: #a95c35;
-}
-:root {
+
+:root, .light {
   --color-tone-1: #1a1a1b;
   --color-tone-2: #787c7e;
   --color-tone-3: #878a8c;
@@ -31,11 +15,31 @@
   --color-tone-5: #edeff1;
   --color-tone-6: #f6f7f8;
   --color-tone-7: #ffffff;
-  --opacity-50: rgba(255, 255, 255, 0.8);
-  /* Remove opacity for modern look */
+  /* new colors */
   --opacity-50: #f3f2f8;
+  --color-absent: #a4aec4;
 }
-/* Dark Theme Colors */
+:root {
+  /* original colors */
+  --green: #6aaa64;
+  --yellow: #c9b458;
+  --lightGray: #d8d8d8;
+  --gray: #86888a;
+  --darkGray: #939598;
+  --white: #fff;
+  --black: #212121;
+  --orange: #f5793a;
+  --blue: #85c0f9;
+  /* new colors */
+  --purple: #21123b;
+  --light-pink: #ffe6ea;
+  --pink: #e06377;
+  --brown: #a95c35;
+  --green: #79b851;
+  --yellow: #f3c237;
+}
+
+/* Theme Colors */
 .dark {
   --color-tone-1: #d7dadc;
   --color-tone-2: #818384;
@@ -44,49 +48,46 @@
   --color-tone-5: #272729;
   --color-tone-6: #1a1a1b;
   --color-tone-7: #121213;
-  --opacity-50: rgba(0, 0, 0, 0.8);
-  --color-absent: var(--color-tone-4);
-  /* Remove opacity for modern look */
+  /* new colors */
+  --color-absent: #3d4054;
   --opacity-50: #000000;
 }
 .contrast {
   --green: var(--orange);
   --yellow: var(--blue);
 }
-.brightColors {
-  --green: #79b851;
-  --yellow: #f3c237;
-  --color-absent: #a4aec4;
-}
-
-/* April Fools Special!! */
-.aprilFools {
+.aprilFools, .aprilFools .light, .aprilFools .dark {
   --yellow: var(--pink);
   --color-absent: var(--brown) !important;
   background: pink;
+  --opacity-50: pink;
 }
 .aprilFools table.squares td {
   background: var(--light-pink);
   border: none !important;
 }
 
-.contrastEnabled::after, .darkEnabled::after, .aprilFoolsEnabled::after, .brightColorsEnabled::after {
+/* Theme Settings */
+.lightEnabled, .darkEnabled {
+  border: 4px solid transparent;
+}
+body:not(.dark) .lightEnabled, .dark .darkEnabled {
+  border-color: var(--yellow);
+}
+.contrastEnabled::after, .aprilFoolsEnabled::after {
   content: "Disabled";
 }
-.contrast .contrastEnabled::after, .dark .darkEnabled::after, .aprilFools .aprilFoolsEnabled::after, .brightColors .brightColorsEnabled::after {
+.contrast .contrastEnabled::after, .aprilFools .aprilFoolsEnabled::after {
   content: "Enabled";
 }
 
-:root {
+/*:root {
   --color-absent: var(--color-tone-2);
   --key-bg: var(--color-tone-4);
   --key-bg-present: var(--color-present);
   --key-bg-correct: var(--color-correct);
   --key-bg-absent: var(--color-absent);
-}
-:root {
-  --color-background: var(--color-tone-7);
-}
+}*/
 :root {
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
@@ -428,14 +429,14 @@ div.bundle {
 div.bundle h2 {
   margin-top: 0;
 }
-div.bundle button {
-  background: #eeeef0;
-}
 .dark aside button, .dark div.bundle {
   background: #1d1d1f;
 }
-.dark div.bundle button {
+.dark div.bundle button, div.bundle button.dark {
   background: #59606a;
+}
+div.bundle button, div.bundle button.light {
+  background: #eeeef0;
 }
 
 

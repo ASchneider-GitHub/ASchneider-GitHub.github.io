@@ -169,28 +169,77 @@
   </aside>
   <aside id="settings">
     <h1>Settings</h1>
-    <p>Standard Color Schemes</p>
-    <button class="darkEnabled" onclick="window.septle.theme.toggle();">Dark Mode:&nbsp;</button>
-    <br><br>
-    <button class="contrastEnabled" onclick="window.septle.theme.contrast();">Colorblind Mode:&nbsp;</button>
-    <br><br>
-    <button class="brightColorsEnabled" onclick="window.septle.theme.brightColors();">Bright Color Mode:&nbsp;</button>
-    <br><br>
-    <p>Seasonal Theme:<br>Green > Green, Yellow > Pink, Grey > Brown</p>
-    <button class="aprilFoolsEnabled" onclick="window.septle.theme.aprilFools();">Spring Theme:&nbsp;</button>
+    <div class="bundle">
+      <h2>Theme</h2>
+      <span class="halfButtons">
+        <button class="light lightEnabled" onclick="window.septle.theme.toggle();">
+          <table class="squares" style="--rows:3;--letters:3;margin:auto;">
+            <tbody>
+              <tr>
+                <td class="filled" data-state="absent"></td>
+                <td class="filled" data-state="absent"></td>
+                <td class="filled" data-state="absent"></td>
+              </tr>
+              <tr>
+                <td class="filled" data-state="absent"></td>
+                <td class="filled" data-state="present"></td>
+                <td class="filled" data-state="correct"></td>
+              </tr>
+              <tr>
+                <td class="filled" data-state="correct"></td>
+                <td class="filled" data-state="correct"></td>
+                <td class="filled" data-state="correct"></td>
+              </tr>
+            </tbody>
+          </table>
+          Light
+        </button>
+        <button class="dark darkEnabled" onclick="window.septle.theme.toggle();">
+          <table class="squares" style="--rows:3;--letters:3;margin:auto;">
+            <tbody>
+              <tr>
+                <td class="filled" data-state="absent"></td>
+                <td class="filled" data-state="absent"></td>
+                <td class="filled" data-state="absent"></td>
+              </tr>
+              <tr>
+                <td class="filled" data-state="absent"></td>
+                <td class="filled" data-state="present"></td>
+                <td class="filled" data-state="correct"></td>
+              </tr>
+              <tr>
+                <td class="filled" data-state="correct"></td>
+                <td class="filled" data-state="correct"></td>
+                <td class="filled" data-state="correct"></td>
+              </tr>
+            </tbody>
+          </table>
+          Dark
+        </button>
+      </span>
+    </div>
+    <div class="bundle">
+      <h2>Colors</h2>
+      <button class="contrastEnabled" onclick="window.septle.theme.contrast();">Colorblind Mode:&nbsp;</button>
+      <span style="height:10px;display:block;"></span>
+      <button class="aprilFoolsEnabled" onclick="window.septle.theme.aprilFools();">Spring Theme:&nbsp;</button>
+    </div>
   </aside>
   <aside id="info">
-    <h1>Info  :)</h1>
-    <p>Septle is a seven letter word game based off of the New York Times' Wordle. The words update daily. Bonus and NYTimes words are not required to get a streak, but playing them on Septle allows you to view and share your statistics all at once. If you don't know how to play it is recommended that you try their version first.</p>
+    <h1>Info</h1>
+    <p>Septle is a seven letter word game based off of the <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">New York Times' Wordle</a>. The words update daily.</p>
+    <p>The bonus and NYTimes words are not required to get a streak.</p>
     <br>
-    <p>
-      Have Questions or Concerns? We'd love to hear it!
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">Leave feedback</a> or
-      <a href="mailto:support@septle.com" target="_blank">Email us</a> (quicker response)
-    </p>
+    <p>&copy; Septle 2022. All rights reserved.<br>Wordle and the The New York Times are copyrighted properties of The New York Times Company and are not affiliated with Septle.</p>
     <br>
-    <p>&copy; Septle 2022. All rights reserved.</p>
-    <p>Wordle and the The New York Times are copyrighted properties of The New York Times Company and are not affiliated with Septle.</p>
+    <div class="bundle">
+      <h2>Feedback</h2>
+      <p>Have Questions or Concerns? We'd love to hear it!</p>
+      <span class="halfButtons">
+        <button style="width:75%;background:var(--green);color:white" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform')"><i class="fa-solid fa-message-lines"></i> Leave Feedback</button>
+        <button style="background:var(--yellow);color:white" onclick="window.open('mailto:support@septle.com')"><i class="fa-solid fa-envelope"></i> Email Us</button>
+      </span>
+    </div>
   </aside>
   <aside id="welcomeBack">
     <h1>We're working on it!</h1>
