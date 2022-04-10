@@ -280,6 +280,7 @@ window.septle = {
       alert("Not enough letters!");
       row.classList.add("invalid");setTimeout(function(){row.classList.remove("invalid")},600);
     }
+    this.dim(document.querySelector(".key#enter")); // keyboard animation
   },
   deleteLetter: function () {
     let cell, row;
@@ -298,6 +299,7 @@ window.septle = {
       cell.innerHTML = "";
       cell.setAttribute("data-state", "");
     }
+    this.dim(document.querySelector(".key#delete")); // keyboard animation
   },
   letterPress: function (letter) {
     let cell, row;
@@ -317,6 +319,15 @@ window.septle = {
       cell.classList.remove("current");
       cell.nextElementSibling.classList.add("current");
     }
+    // keyboard animation
+    let key = document.querySelector(".key[data-value=" + letter + "]");
+    this.dim(key);
+  },
+  dim: function(element) {
+    element.classList.add("dim");
+    setTimeout(function(){
+      element.classList.remove("dim");
+    },100);
   },
   statistics: {
     fetchEmojis: function() {
@@ -577,6 +588,9 @@ window.septle = {
     contrast: function() {
       localStorage.contrastTheme = document.body.classList.toggle("contrast");
     },
+    brightColors: function() {
+      localStorage.brightColors = document.body.classList.toggle("brightColors");
+    },
     aprilFools: function() {
       localStorage.aprilFools = document.body.classList.toggle("aprilFools");
     },
@@ -587,6 +601,9 @@ window.septle = {
       }
       if(localStorage.aprilFools && localStorage.aprilFools == "true") {
         document.body.classList.add("aprilFools");
+      }
+      if(localStorage.brightColors && localStorage.brightColors == "true") {
+        document.body.classList.add("brightColors");
       }
       if(localStorage.contrastTheme && localStorage.contrastTheme == "true") {
         document.body.classList.add("contrast");

@@ -2,19 +2,19 @@
 <html lang="en" class="loading">
 <head>
   <!-- only keep this non-codepen stuff -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-<title>Septle</title>
-<meta name="description" content="Guess the hidden word in 8 tries. A new puzzle is available each day.">
-<meta name="keywords" content="septle, septal, septile, 7, letter, words, wordle, game, puzzle, word, letters, play, online, guess">
-<meta name="theme-color" content="#21123b" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X4SN7QKEYV"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-X4SN7QKEYV');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Septle</title>
+  <meta name="description" content="Guess the hidden word in 8 tries. A new puzzle is available each day.">
+  <meta name="keywords" content="septle, septal, septile, 7, letter, words, wordle, game, puzzle, word, letters, play, online, guess">
+  <meta name="theme-color" content="#21123b" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X4SN7QKEYV"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X4SN7QKEYV');
 </script>
 <!-- FB Meta Tags -->
 <meta property="og:url" content="https://septle.com">
@@ -34,210 +34,206 @@ gtag('config', 'G-X4SN7QKEYV');
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<main>
-  <header>
-    <div class="icon">
-      <button class="fa-solid fa-house-chimney home active" onclick="window.septle.aside.show('home');"></button>
-      <button class="fa-solid fa-chart-simple statistics" onclick="window.septle.aside.show('statistics');"></button>
-    </div>
-    <h1>SEPTLE #<span id="dayNumber">0</span></h1>
-    <div class="icon">
-      <button class="fa-solid fa-gear settings" onclick="window.septle.aside.show('settings');"></button>
-      <button class="fa-solid fa-gem" id="arc-space" style="visibility:hidden;display:none;"></button>
-    </div>
-  </header>
-  <section class="board">
-    <table class="squares"></table>
-  </section>
-  <section class="keyboard">
-    <div class="row">
-      <button class="key" data-value="Q">Q</button>
-      <button class="key" data-value="W">W</button>
-      <button class="key" data-value="E">E</button>
-      <button class="key" data-value="R">R</button>
-      <button class="key" data-value="T">T</button>
-      <button class="key" data-value="Y">Y</button>
-      <button class="key" data-value="U">U</button>
-      <button class="key" data-value="I">I</button>
-      <button class="key" data-value="O">O</button>
-      <button class="key" data-value="P">P</button>
-    </div>
-    <div class="row">
-      <span class="half"></span>
-      <button class="key" data-value="A">A</button>
-      <button class="key" data-value="S">S</button>
-      <button class="key" data-value="D">D</button>
-      <button class="key" data-value="F">F</button>
-      <button class="key" data-value="G">G</button>
-      <button class="key" data-value="H">H</button>
-      <button class="key" data-value="J">J</button>
-      <button class="key" data-value="K">K</button>
-      <button class="key" data-value="L">L</button>
-      <span class="half"></span>
-    </div>
-    <div class="row">
-      <button class="key" id="enter" style="flex: 1.5;"><i class="fa-solid fa-circle-check" class="font-size: 1.2em;"></i></button>
-      <button class="key" data-value="Z">Z</button>
-      <button class="key" data-value="X">X</button>
-      <button class="key" data-value="C">C</button>
-      <button class="key" data-value="V">V</button>
-      <button class="key" data-value="B">B</button>
-      <button class="key" data-value="N">N</button>
-      <button class="key" data-value="M">M</button>
-      <button class="key" id="delete" style="flex: 1.5;"><i class="fa-solid fa-delete-left" class="font-size: 1.2em;"></i></button>
-    </div>
-  </section>
-</main>
+  <!-- partial:index.partial.html -->
+  <main>
+    <header>
+      <div class="icon">
+        <button class="fa-solid fa-house-chimney home active" onclick="window.septle.aside.show('home');"></button>
+        <button class="fa-solid fa-chart-simple statistics" onclick="window.septle.aside.show('statistics');"></button>
+      </div>
+      <h1>SEPTLE #<span id="dayNumber">0</span></h1>
+      <div class="icon">
+        <button class="fa-solid fa-gear settings" onclick="window.septle.aside.show('settings');"></button>
+        <button class="fa-solid fa-gem" id="arc-space" style="visibility:hidden;display:none;"></button>
+      </div>
+    </header>
+    <section class="board">
+      <table class="squares"></table>
+    </section>
+    <section class="keyboard">
+      <div class="row">
+        <button class="key" data-value="Q">Q</button>
+        <button class="key" data-value="W">W</button>
+        <button class="key" data-value="E">E</button>
+        <button class="key" data-value="R">R</button>
+        <button class="key" data-value="T">T</button>
+        <button class="key" data-value="Y">Y</button>
+        <button class="key" data-value="U">U</button>
+        <button class="key" data-value="I">I</button>
+        <button class="key" data-value="O">O</button>
+        <button class="key" data-value="P">P</button>
+      </div>
+      <div class="row">
+        <span class="half"></span>
+        <button class="key" data-value="A">A</button>
+        <button class="key" data-value="S">S</button>
+        <button class="key" data-value="D">D</button>
+        <button class="key" data-value="F">F</button>
+        <button class="key" data-value="G">G</button>
+        <button class="key" data-value="H">H</button>
+        <button class="key" data-value="J">J</button>
+        <button class="key" data-value="K">K</button>
+        <button class="key" data-value="L">L</button>
+        <span class="half"></span>
+      </div>
+      <div class="row">
+        <button class="key" id="enter" style="flex: 1.5;"><i class="fa-solid fa-circle-check" class="font-size: 1.2em;"></i></button>
+        <button class="key" data-value="Z">Z</button>
+        <button class="key" data-value="X">X</button>
+        <button class="key" data-value="C">C</button>
+        <button class="key" data-value="V">V</button>
+        <button class="key" data-value="B">B</button>
+        <button class="key" data-value="N">N</button>
+        <button class="key" data-value="M">M</button>
+        <button class="key" id="delete" style="flex: 1.5;"><i class="fa-solid fa-delete-left" class="font-size: 1.2em;"></i></button>
+      </div>
+    </section>
+  </main>
 
-<aside id="home" class="show">
-  <p>Septle is simply a seven letter Wordle. Bonus and NYTimes words not required to get a streak, you can share your results all at once.</p>
-  <p>Words update daily. Want more? Try <a onclick="window.septle.aside.show('practice');">practice mode</a>!</p>
-  <span style="height:5px;display:block;"></span>
-  <div id="septle">
-    <h2>Septle: <span class="status"></span></h2>
-    <button onclick="window.septle.start(this);" class="play"></button>
-    <button onclick="window.septle.start(this);" class="board"></button>
-  </div>
-  <div id="six">
-    <h2>Six-letter Bonus: <span class="status"></span></h2>
-    <button onclick="window.septle.start(this);" class="play"></button>
-    <button onclick="window.septle.start(this);" class="board"></button>
-  </div>
-  <div id="nytimes">
-    <h2>NYTimes word: <span class="status"></span></h2>
-    <button onclick="window.septle.start(this);" class="play"></button>
-    <button onclick="window.septle.start(this);" class="board"></button>
-  </div>
-  <br>
-  <span class="halfButtons">
-    <button onclick="window.septle.aside.show('info');" class="info"></button>
-    <button onclick="window.septle.aside.show('statistics');" class="openStats"></button>
-  </span>
-</aside>
-<aside id="practice">
-  <h1>Practice Mode</h1>
-  <p>Not enough Septle in your day? With practice mode, you can play an unlimited amount of words.</p>
-  <p>The words are randomly picked from an English dictionary, so you might find them obscure or offensive.</p>
-  <span style="height:5px;display:block;"></span>
-  <div>
-    <h2>Seven Letter</h2>
-    <button onclick="window.septle.practice(7);" class="play"></button>
-  </div>
-  <div>
-    <h2>Six Letter</h2>
-    <button onclick="window.septle.practice(6);" class="play"></button>
-  </div>
-  <div>
-    <h2>Five Letter</h2>
-    <button onclick="window.septle.practice(5);" class="play"></button>
-  </div>
-</aside>
-<aside id="statistics">
-  <h2 style="margin-top:0">Guess Distribution</h2>
-  <span id="distribution" class="halfButtons visualButtons gradientButtons">
-    <button><strong>0</strong>1</button>
-    <button><strong>0</strong>2</button>
-    <button><strong>0</strong>3</button>
-    <button><strong>0</strong>4</button>
-    <button><strong>0</strong>5</button>
-    <button><strong>0</strong>6</button>
-    <button><strong>0</strong>7</button>
-    <button><strong>0</strong>8</button>
-  </span>
-  <br>
-  <h2>Current Streak: <span id="streak">0 days</span></h2>
-  <span class="halfButtons visualButtons">
-    <button><strong id="winCount">0</strong>Completed</button>
-    <button><strong id="failCount">0</strong>Failed</button>
-    <button><strong id="winsPercent">0%</strong>Wins</button>
-  </span>
-  <br>
-  <h2>Today’s Scores</h2>
-  <span class="halfButtons visualButtons">
-    <button><strong id="septleScore">0/8</strong>Septle</button>
-    <button><strong id="sixScore">0/7</strong>Bonus</button>
-    <button><strong id="nytimesScore">0/6</strong>NYTimes</button>
-  </span>
-  <br>
-  <span class="halfButtons">
-    <button class="telegram" onclick="septle.statistics.url('telegram')"></button>
-    <button class="twitter" onclick="septle.statistics.url('tweet')"></button>
-    <button class="facebook" onclick="septle.statistics.url('facebook')"></button>
-    <button class="share" onclick="septle.statistics.share()"></button>
-    <button class="copy" onclick="septle.statistics.copy()"></button>
-  </span>
-</aside>
-<aside id="settings">
-  <h1>Settings</h1>
-  <p>Standard Color Schemes</p>
-  <button class="darkEnabled" onclick="window.septle.theme.toggle();">Dark Mode:&nbsp;</button>
-  <br><br>
-  <button class="contrastEnabled" onclick="window.septle.theme.contrast();">Colorblind Mode:&nbsp;</button>
-  <br><br>
-  <p>Seasonal Theme:<br>Green > Green, Yellow > Pink, Grey > Brown</p>
-  <button class="aprilFoolsEnabled" onclick="window.septle.theme.aprilFools();">Spring Theme:&nbsp;</button>
-</aside>
-<aside id="info">
-  <h1>Info  :)</h1>
-  <p>Septle is a seven letter word game based off of the New York Times' Wordle. If you don't know how to play it is recommended that you try their version first.</p>
-  <br>
-  <p>
-    Have Questions or Concerns? We'd love to hear it!
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">Leave feedback</a> or
-    <a href="mailto:support@septle.com" target="_blank">Email us</a> (quicker response)
-  </p>
-  <br>
-  <p>&copy; Septle 2022. All rights reserved.</p>
-  <p>Wordle and the The New York Times are copyrighted properties of The New York Times Company and are not affiliated with Septle.</p>
-</aside>
-<aside id="welcomeBack">
-  <h1>We're working on it!</h1>
-  <p>We completely re-wrote the interface and are working to fix any bugs.</p>
-  <ul>
-    <li>We have carried over your past streaks from the old version, you can still share normally.</li>
-    <li>It appears that the new version isn't working in some browsers - try another browser and leave us feedback. The old version is <a href="/old/">here</a>.</li>
-    <li>We added options to play wordle and a bonus word. You only need to play the septle to get a streak (no more french words BTW).</li>
-  </ul>
-  <p>We appreaciate all who have given us <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">feedback</a>. Let us know if there are more problems.</p>
-  <button onclick="window.septle.aside.show('home');">Continue to new version!</button>
-</aside>
-<aside id="monthlyMessage">
-  <h1 style="color:var(--pink)">Happy April<span> Fools Day</span>!</h1>
-  <p>We've switched up the colors a little bit to be more spring like!</p>
-  <br>
-  <p>If you don't like the new colors you can turn them off in <a onclick="window.septle.aside.show('settings')">settings</a>.</p>
-  <br><br>
-  <p>
-    New colors (trying to make it more flower like):<br>
-    Gray —> Brown<br>
-    Yellow —> Pink<br>
-    Green —> Green<br>
-  </p>
-  <br><br><br>
-  <button onclick="window.septle.aside.show('home');">Continue</button>
-</aside>
+  <aside id="home" class="show">
+    <p>Guess the <strong>Septle</strong> in eight tries.</p>
+    <p>If one game isn't enough, you can play the bonus or try <a onclick="window.septle.aside.show('practice');">practice mode</a>!</p>
+    <span style="height:10px;display:block;"></span>
+    <div id="septle" class="bundle">
+      <h2>Septle: <span class="status"></span></h2>
+      <button onclick="window.septle.start(this);" class="play"></button>
+      <button onclick="window.septle.start(this);" class="board"></button>
+    </div>
+    <div id="six" class="bundle">
+      <h2>Six Letter Bonus: <span class="status"></span></h2>
+      <button onclick="window.septle.start(this);" class="play"></button>
+      <button onclick="window.septle.start(this);" class="board"></button>
+    </div>
+    <div id="nytimes" class="bundle">
+      <h2>NYTimes word: <span class="status"></span></h2>
+      <button onclick="window.septle.start(this);" class="play"></button>
+      <button onclick="window.septle.start(this);" class="board"></button>
+    </div>
+    <span class="halfButtons">
+      <button onclick="window.septle.aside.show('info');" class="info"></button>
+      <button onclick="window.septle.aside.show('statistics');" class="openStats"></button>
+    </span>
+  </aside>
+  <aside id="practice">
+    <h1>Practice Mode</h1>
+    <p>Not enough Septle in your day? With practice mode, you can play an unlimited amount of words.</p>
+    <p>The words are randomly picked from an English dictionary, so you might find them obscure or offensive.</p>
+    <span style="height:5px;display:block;"></span>
+    <div class="bundle">
+      <h2>Seven Letter</h2>
+      <button onclick="window.septle.practice(7);" class="play"></button>
+    </div>
+    <div class="bundle">
+      <h2>Six Letter</h2>
+      <button onclick="window.septle.practice(6);" class="play"></button>
+    </div>
+    <div class="bundle">
+      <h2>Five Letter</h2>
+      <button onclick="window.septle.practice(5);" class="play"></button>
+    </div>
+  </aside>
+  <aside id="statistics">
+    <h2 style="margin-top:0">Guess Distribution</h2>
+    <span id="distribution" class="halfButtons visualButtons gradientButtons">
+      <button><strong>0</strong>1</button>
+      <button><strong>0</strong>2</button>
+      <button><strong>0</strong>3</button>
+      <button><strong>0</strong>4</button>
+      <button><strong>0</strong>5</button>
+      <button><strong>0</strong>6</button>
+      <button><strong>0</strong>7</button>
+      <button><strong>0</strong>8</button>
+    </span>
+    <br>
+    <h2>Current Streak: <span id="streak">0 days</span></h2>
+    <span class="halfButtons visualButtons">
+      <button><strong id="winCount">0</strong>Completed</button>
+      <button><strong id="failCount">0</strong>Failed</button>
+      <button><strong id="winsPercent">0%</strong>Wins</button>
+    </span>
+    <br>
+    <h2>Today’s Scores</h2>
+    <span class="halfButtons visualButtons">
+      <button><strong id="septleScore">0/8</strong>Septle</button>
+      <button><strong id="sixScore">0/7</strong>Bonus</button>
+      <button><strong id="nytimesScore">0/6</strong>NYTimes</button>
+    </span>
+    <br>
+    <span class="halfButtons">
+      <button class="telegram" onclick="septle.statistics.url('telegram')"></button>
+      <button class="twitter" onclick="septle.statistics.url('tweet')"></button>
+      <button class="facebook" onclick="septle.statistics.url('facebook')"></button>
+      <button class="share" onclick="septle.statistics.share()"></button>
+      <button class="copy" onclick="septle.statistics.copy()"></button>
+    </span>
+  </aside>
+  <aside id="settings">
+    <h1>Settings</h1>
+    <p>Standard Color Schemes</p>
+    <button class="darkEnabled" onclick="window.septle.theme.toggle();">Dark Mode:&nbsp;</button>
+    <br><br>
+    <button class="contrastEnabled" onclick="window.septle.theme.contrast();">Colorblind Mode:&nbsp;</button>
+    <br><br>
+    <button class="brightColorsEnabled" onclick="window.septle.theme.brightColors();">Bright Color Mode:&nbsp;</button>
+    <br><br>
+    <p>Seasonal Theme:<br>Green > Green, Yellow > Pink, Grey > Brown</p>
+    <button class="aprilFoolsEnabled" onclick="window.septle.theme.aprilFools();">Spring Theme:&nbsp;</button>
+  </aside>
+  <aside id="info">
+    <h1>Info  :)</h1>
+    <p>Septle is a seven letter word game based off of the New York Times' Wordle. The words update daily. Bonus and NYTimes words are not required to get a streak, but playing them on Septle allows you to view and share your statistics all at once. If you don't know how to play it is recommended that you try their version first.</p>
+    <br>
+    <p>
+      Have Questions or Concerns? We'd love to hear it!
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">Leave feedback</a> or
+      <a href="mailto:support@septle.com" target="_blank">Email us</a> (quicker response)
+    </p>
+    <br>
+    <p>&copy; Septle 2022. All rights reserved.</p>
+    <p>Wordle and the The New York Times are copyrighted properties of The New York Times Company and are not affiliated with Septle.</p>
+  </aside>
+  <aside id="welcomeBack">
+    <h1>We're working on it!</h1>
+    <p>We completely re-wrote the interface and are working to fix any bugs.</p>
+    <ul>
+      <li>We have carried over your past streaks from the old version, you can still share normally.</li>
+      <li>It appears that the new version isn't working in some browsers - try another browser and leave us feedback. The old version is <a href="/old/">here</a>.</li>
+      <li>We added options to play wordle and a bonus word. You only need to play the septle to get a streak (no more french words BTW).</li>
+    </ul>
+    <p>We appreaciate all who have given us <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">feedback</a>. Let us know if there are more problems.</p>
+    <button onclick="window.septle.aside.show('home');">Continue to new version!</button>
+  </aside>
+  <aside id="monthlyMessage">
+    <h1 style="color:var(--pink)">Happy April<span> Fools Day</span>!</h1>
+    <p>We've switched up the colors a little bit to be more spring like!</p>
+    <br>
+    <p>If you don't like the new colors you can turn them off in <a onclick="window.septle.aside.show('settings')">settings</a>.</p>
+    <br><br>
+    <p>
+      New colors (trying to make it more flower like):<br>
+      Gray —> Brown<br>
+      Yellow —> Pink<br>
+      Green —> Green<br>
+    </p>
+    <br><br><br>
+    <button onclick="window.septle.aside.show('home');">Continue</button>
+  </aside>
 
-<!--alert section -->
-<div id="alertBox"></div>
+  <!--alert section -->
+  <div id="alertBox"></div>
 
-<!--April Fools day flower
-<img class="foolsDay" style="position:fixed;top:150px;left:8px;width:50px;cursor:pointer;display:none;background:#fff;padding:5px;border-radius:5px;" src="images/flower.png" onclick="this.remove();alert('Happy April Fools day!\n This is just a random flower. It does nothing.')">
-<img class="foolsDay" style="position:fixed;top:250px;right:8px;width:50px;cursor:pointer;display:none;background:#fff;padding:5px;border-radius:5px;" src="images/bird.png" onclick="this.remove();alert('Happy April Fools day!\n This is just a random bird. It does nothing.')">
-^^ now disabled -->
+  <!-- Loading Screen -->
+  <div class="loadScreen">
+    <img src="images/septle-small-logo.png"/>
+    <h1>Septle</h1>
+  </div>
 
-<!-- Loading Screen -->
-<div class="loadScreen">
-  <img src="images/septle-small-logo.png"/>
-  <h1>Septle</h1>
-</div>
-
-<!-- Landscape warning -->
-<div class="landscape">
-  <i class="fa-solid fa-arrows-rotate"></i>
-  <h1>Rotate out of Landscape to play</h1>
-</div>
-<!-- partial -->
+  <!-- Landscape warning -->
+  <div class="landscape">
+    <i class="fa-solid fa-arrows-rotate"></i>
+    <h1>Rotate out of Landscape to play</h1>
+  </div>
+  <!-- load script -->
   <script  src="./script.js"></script>
 
 </body>

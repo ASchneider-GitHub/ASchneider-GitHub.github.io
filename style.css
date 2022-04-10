@@ -32,6 +32,8 @@
   --color-tone-6: #f6f7f8;
   --color-tone-7: #ffffff;
   --opacity-50: rgba(255, 255, 255, 0.8);
+  /* Remove opacity for modern look */
+  --opacity-50: #f3f2f8;
 }
 /* Dark Theme Colors */
 .dark {
@@ -44,29 +46,37 @@
   --color-tone-7: #121213;
   --opacity-50: rgba(0, 0, 0, 0.8);
   --color-absent: var(--color-tone-4);
+  /* Remove opacity for modern look */
+  --opacity-50: #000000;
 }
 .contrast {
   --green: var(--orange);
   --yellow: var(--blue);
+}
+.brightColors {
+  --green: #79b851;
+  --yellow: #f3c237;
+  --color-absent: #a4aec4;
 }
 
 /* April Fools Special!! */
 .aprilFools {
   --yellow: var(--pink);
   --color-absent: var(--brown) !important;
-    background: pink;
+  background: pink;
 }
 .aprilFools table.squares td {
   background: var(--light-pink);
   border: none !important;
 }
 
-.contrastEnabled::after, .darkEnabled::after, .aprilFoolsEnabled::after {
+.contrastEnabled::after, .darkEnabled::after, .aprilFoolsEnabled::after, .brightColorsEnabled::after {
   content: "Disabled";
 }
-.contrast .contrastEnabled::after, .dark .darkEnabled::after, .aprilFools .aprilFoolsEnabled::after {
+.contrast .contrastEnabled::after, .dark .darkEnabled::after, .aprilFools .aprilFoolsEnabled::after, .brightColors .brightColorsEnabled::after {
   content: "Enabled";
 }
+
 :root {
   --color-absent: var(--color-tone-2);
   --key-bg: var(--color-tone-4);
@@ -75,7 +85,7 @@
   --key-bg-absent: var(--color-absent);
 }
 :root {
-  --color-background: var(--color-tone-7);]
+  --color-background: var(--color-tone-7);
 }
 :root {
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
@@ -91,11 +101,11 @@
 }
 
 body {
-  background-color: var(--color-tone-7);
+  background: var(--opacity-50);
   margin: 0;
   padding: 0;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   /* mobile viewport bug fix */
   position: fixed;
@@ -131,7 +141,7 @@ header {
 }
 header button, header h1 {
   font-size: 30px;
-  padding: 5px;
+  padding: 6.5px;
   margin: 0;
 }
 div.icon {
@@ -141,14 +151,6 @@ div.icon {
 div.icon button {
   color: #aaa;
   cursor: pointer;
-}
-div.icon:first-child {
-  left: 5px;
-}
-div.icon:last-child {
-  right: 5px;
-}
-div.icon button {
   padding: 10px 7.5px;
   padding-bottom: 15px;
   border-radius: 10px 10px 0 0;
@@ -156,8 +158,14 @@ div.icon button {
   background: transparent;
   border: none;
 }
+div.icon:first-child {
+  left: 5px;
+}
+div.icon:last-child {
+  right: 5px;
+}
 div.icon button.active {
-  background: var(--color-tone-7);
+  background: var(--opacity-50);
   color: var(--color-tone-1);
 }
 
@@ -216,6 +224,7 @@ td {
 }
 td[data-state="tbd"] {
   border: 2px solid var(--color-tone-3);
+  animation: pop .3s;
 }
 td.filled, button.filled {
   --duration: 0.5s;
@@ -284,11 +293,21 @@ tr.current.invalid {
     transform: translateX(4px);
   }
 }
+@keyframes pop {
+  from {
+    transform:scale(.8);
+    opacity:0
+  }
+  40% {
+    transform:scale(1.1);
+    opacity:1
+  }
+}
 
 section.keyboard {
   height: var(--keyboard-height);
   width: 100%;
-  background: var(--color-tone-5);
+  background: var(--color-tone-7);
   border-radius: 10px 10px 0 0;
   padding: 5px 15px;
   user-select: none;
@@ -320,6 +339,9 @@ section.keyboard .row .key {
 }
 .dark section.keyboard .row .key {
   background: var(--color-tone-2);
+}
+/*section.keyboard .row .key*/ .dim {
+opacity: 0.7;
 }
 section.keyboard .row .half {
   flex: 0.5;
@@ -392,10 +414,31 @@ aside button {
   border: none;
   border-radius: 10px;
   font-size: 16px;
-  background: var(--color-tone-4);
   color: var(--color-tone-1);
   cursor: pointer;
+  background: #ffffff;
+  /*#eeeef0*/
 }
+div.bundle {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+div.bundle h2 {
+  margin-top: 0;
+}
+div.bundle button {
+  background: #eeeef0;
+}
+.dark aside button, .dark div.bundle {
+  background: #1d1d1f;
+}
+.dark div.bundle button {
+  background: #59606a;
+}
+
+
 aside span.halfButtons {
   display: flex;
 }
@@ -482,6 +525,9 @@ aside button.telegram {
 }
 aside button.facebook {
   background: #39569c;
+}
+aside button.copy {
+  background: var(--color-tone-4);
 }
 
 /* Move arc to not obscure keyboard */

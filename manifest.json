@@ -14,8 +14,8 @@
     }
   ],
   "start_url": "/?pwa=true",
-  "background_color": "#6aaa64",
+  "background_color": "#21123b",
   "display": "standalone",
-  "theme_color": "#6aaa64",
+  "theme_color": "#21123b",
   "description": "A harder daily word game"
 }
