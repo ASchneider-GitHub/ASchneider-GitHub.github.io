@@ -3,14 +3,15 @@
   "name": "Septle",
   "icons": [
     {
-      "src": "/images/septle_logo_48x48.png",
+      "src": "/images/favicon-48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
       "src": "/images/septle-small-logo.png",
       "type": "image/png",
-      "sizes": "528x528"
+      "sizes": "528x528",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/?pwa=true",
