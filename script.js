@@ -107,6 +107,7 @@ window.septle = {
       if (i == 0) newRow.classList.add("current");
       for (let i2 = 0; i2 < collums; i2++) {
         let newCell = newRow.insertCell();
+        newCell.setAttribute("onclick", "window.septle.focus(this)");
         if (i2 == 0) newCell.classList.add("current");
       }
     }
@@ -171,15 +172,36 @@ window.septle = {
     this.new(word);
     this.aside.hideAll();
   },
+  focus: function(direction) {
+    let element;
+    if(typeof(direction) == "object") {
+      element = direction;
+      if(element.parentElement.classList.contains("current")) {
+        element.parentElement.querySelector("td.current").classList.remove("current");
+        element.classList.add("current");
+      }
+    } else if(direction == "right" || direction == "left") {
+      element = document.querySelector("tr.current td.current");
+      if(element) {
+        element.classList.remove("current");
+        newElement = direction == "right" ? element.nextElementSibling : element.previousElementSibling;
+      }
+      if(!element || !newElement) {
+        let cells = document.querySelectorAll("tr.current td");
+        newElement = direction == "right" ? cells[0] : cells[cells.length - 1];
+      }
+      newElement.classList.add("current");
+    }
+  },
   enterPress: function (nosave) {
     let cell, row;
-    if(document.querySelector(".squares tr.current td.current")) {
+    if(document.querySelector(".squares tr.current")) {
       row = document.querySelector(".squares tr.current");
-      cell = row.querySelector("td.current");
+      //cell = row.querySelector("td.current");
     } else {
       return;
     }
-    if (!cell.nextElementSibling && cell.innerText != "") {
+    if (row.querySelectorAll('[data-state=tbd]').length == row.querySelectorAll("td").length/*!cell.nextElementSibling && cell.innerText != ""*/) {
       // if last letter of row typed in
       let word = window.septle.word.toUpperCase();
       let wordArray = word.split("");
@@ -236,7 +258,7 @@ window.septle = {
         }
       });
       // move on to next row
-      cell.classList.remove("current");
+      //cell.classList.remove("current");
       row.classList.remove("current");
       // check for winners
       function goHome() {
@@ -283,22 +305,30 @@ window.septle = {
     this.dim(document.querySelector(".key#enter")); // keyboard animation
   },
   deleteLetter: function () {
-    let cell, row;
-    if(document.querySelector(".squares tr.current td.current")) {
+    let cell, row, newCell;
+    if(document.querySelector(".squares tr.current")) {
       row = document.querySelector(".squares tr.current");
-      cell = row.querySelector("td.current");
+      cell = row.querySelector("td.current") || undefined;
+      if(cell && cell.innerHTML != "") {
+        // if selecting already filled cell
+        newCell = cell;
+      } else if(cell && cell.previousElementSibling) {
+        // if in middle of word
+        newCell = cell.previousElementSibling;
+        cell.classList.remove("current");
+      } else if(cell) {
+        // at start of word and blank, dont delete anything
+        return;
+      } else {
+        // if no letter selected, delete the last letter
+        newCell = row.querySelectorAll("td")[row.querySelectorAll("td").length - 1];
+      }
     } else {
       return;
     }
-    if (cell.previousElementSibling) {
-      cell.classList.remove("current");
-      if (cell.nextElementSibling || !cell.getAttribute("data-state")) {
-        cell = cell.previousElementSibling;
-      }
-      cell.classList.add("current");
-      cell.innerHTML = "";
-      cell.setAttribute("data-state", "");
-    }
+    newCell.classList.add("current");
+    newCell.innerHTML = "";
+    newCell.setAttribute("data-state", "");
     this.dim(document.querySelector(".key#delete")); // keyboard animation
   },
   letterPress: function (letter) {
@@ -309,15 +339,24 @@ window.septle = {
     } else {
       return;
     }
-    if (cell.getAttribute("data-state") != "tbd") {
-      cell.innerText = letter;
-      cell.setAttribute("data-state", "tbd");
-    } else {
-      //alert("out of letters!");
-    }
+    // set values
+    cell.innerText = letter;
+    cell.setAttribute("data-state", "tbd");
+    // move on to next letter
+    cell.classList.remove("current");
     if (cell.nextElementSibling) {
-      cell.classList.remove("current");
       cell.nextElementSibling.classList.add("current");
+    } else {
+      // if at end of word, select any unfilled cells
+      let unfilled = [], cells = row.querySelectorAll("td");
+      cells.forEach((item) => {
+        if(!item.getAttribute("data-state") || item.getAttribute("data-state") != "tbd") {
+          unfilled.push(item);
+        }
+      });
+      if(unfilled.length > 0) {
+        unfilled[0].classList.add("current");
+      }
     }
     // keyboard animation
     let key = document.querySelector(".key[data-value=" + letter + "]");
@@ -327,7 +366,7 @@ window.septle = {
     element.classList.add("dim");
     setTimeout(function(){
       element.classList.remove("dim");
-    },100);
+    },150);
   },
   statistics: {
     fetchEmojis: function() {
@@ -569,6 +608,10 @@ window.septle = {
       } else if (key == 8 || key == 46) {
         // backspace pressed
         window.septle.deleteLetter();
+      } else if(key == 37 || key == 39) {
+        // side arrow keys pressed
+        let direction = key == 37 ? "left" : "right";
+        window.septle.focus(direction);
       } else {
         let letter = String.fromCharCode(key);
         if (letter.match(/[a-z]/i)) {

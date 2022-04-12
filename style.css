@@ -64,7 +64,7 @@
 }
 .aprilFools table.squares td {
   background: var(--light-pink);
-  border: none !important;
+  border-color: transparent;
 }
 
 /* Theme Settings */
@@ -202,6 +202,9 @@ table.squares td {
   justify-content: center;
   align-items: center;
 }
+tr.current td {
+  cursor: pointer;
+}
 button table.squares td {
   font-size: 18px;
 }
@@ -225,6 +228,9 @@ td {
   background-color: var(--color-tone-7);
   border: 2px solid var(--color-tone-4);
   color: var(--color-tone-1);
+}
+tr.current td.current {
+  border-color: var(--yellow) !important;
 }
 td[data-state="tbd"] {
   border: 2px solid var(--color-tone-3);
@@ -345,7 +351,7 @@ section.keyboard .row .key {
   background: var(--color-tone-2);
 }
 /*section.keyboard .row .key*/ .dim {
-opacity: 0.7;
+opacity: 0.5;
 }
 section.keyboard .row .half {
   flex: 0.5;
@@ -549,7 +555,7 @@ div#alertBox {
   left: 0;
   width: 100%;
   height: auto;
-  max-height: 190px;
+  max-height: 200px;
   overflow-x: hidden;
   overflow-y: auto;
   background: var(--purple);
