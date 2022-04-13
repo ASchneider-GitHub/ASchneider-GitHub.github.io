@@ -177,7 +177,8 @@ window.septle = {
     if(typeof(direction) == "object") {
       element = direction;
       if(element.parentElement.classList.contains("current")) {
-        element.parentElement.querySelector("td.current").classList.remove("current");
+        let current = element.parentElement.querySelector("td.current");
+        if(current) { current.classList.remove("current"); }
         element.classList.add("current");
       }
     } else if(direction == "right" || direction == "left") {
@@ -268,8 +269,9 @@ window.septle = {
       if (guessWord == word) {
         // they won!
         if(!nosave) {
-          setTimeout(function(){alert("You won!");},1600);
-          setTimeout(goHome,3100);
+          alert("You won!");
+          window.confetti({particleCount:150,ticks:150});
+          setTimeout(goHome,2000);
         }
         simpleBoard["solved"] = true;
       } else if (row.nextElementSibling) {
@@ -279,12 +281,11 @@ window.septle = {
       } else {
         // losers
         if(nosave != "silence") {
-          setTimeout(function(){alert("You lost! The correct word is " + word);},1600);
+          alert("You lost! The correct word is " + word);
           simpleBoard["solved"] = "fail";
         }
         if(!nosave) {
-          setTimeout(goHome,3100);
-          this.statistics.updateStreak(false);
+          setTimeout(goHome,2000);
         }
       }
       // save board state
@@ -292,9 +293,10 @@ window.septle = {
         board[this.listName] = simpleBoard;
         this.saveBoard(board);
         // call functions that required data to be saved first
-        if(guessWord == word) {
+        if(simpleBoard["solved"]) {
+          let pass = (simpleBoard["solved"] != "fail");
           let length = this.getBoard()[this.listName]["state"].length;
-          this.statistics.updateStreak(true, length);
+          this.statistics.updateStreak(pass, length);
         }
       }
       // end saving
@@ -669,6 +671,8 @@ window.septle.saveBoard();
 window.septle.theme.load();
 window.septle.statistics.load();
 window.septle.statistics.updateStreak("test");
+// load more resources
+document.body.appendChild(document.createElement('script')).src='concepts/confetti.js';
 
 // check to see if day has passed
 document.addEventListener("focus", function(){
@@ -724,5 +728,5 @@ function alert(text) {
   alertBox.appendChild(span);
   setTimeout(function(){
     span.remove();
-  },2500);
+  },2000);
 }
