@@ -612,6 +612,10 @@ window.septle = {
         // side arrow keys pressed
         let direction = key == 37 ? "left" : "right";
         window.septle.focus(direction);
+      } else if(key == 32) {
+        // space key pressed
+        window.septle.focus("right");
+        eventKeyName.preventDefault();
       } else {
         let letter = String.fromCharCode(key);
         if (letter.match(/[a-z]/i)) {
