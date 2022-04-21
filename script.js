@@ -21,7 +21,7 @@ window.septle = {
   wordList: {
     "nytimes":["rupee","nasty","mourn","ahead","brine","cloth","hoard","sweet","month","lapse","watch","today","focus","smelt","tease","cater","movie","saute","allow","renew","their","slosh","purge","chest","depot","epoxy","nymph","found","shall","stove","lowly","snout","trope","fewer","shawl","natal","comma","foray","scare","stair","black","squad","royal","chunk","mince","shame","cheek","ample","flair","foyer","cargo","oxide","plant","olive","inert","askew","heist","shown","zesty","trash","larva","forgo","story","hairy","train","homer","badge","midst","canny","fetus","butch","farce","slung","tipsy","metal","yield","delve","being","scour","glass","gamer","scrap","money","hinge","album","vouch","asset","tiara","crept","bayou","atoll","manor","creak","showy","phase","froth","depth","gloom","flood","trait","girth","piety","goose","float","donor","atone","primo","apron","blown","cacao","loser","input","gloat","awful","brink","smite","beady","rusty","retro","droll","gawky","hutch","pinto","egret","lilac","sever","field","fluff","flack","agape","voice","stead","stalk","berth","madam","night","bland","liver","wedge","augur","roomy","wacky","flock","angry","trite","aphid","tryst","midge","power","elope","cinch","motto","stomp","upset","bluff","cramp","quart","coyly","youth","rhyme","buggy","alien","smear","unfit","patty","cling","glean","label","hunky","khaki","poker","gruel","twice","twang","shrug","treat","waste","merit","woven","needy","clown","widow","irony","ruder","gauze","chief","onset","prize","fungi","charm","gully","inter","whoop","taunt","leery","class","theme","lofty","tibia","booze","alpha","thyme","doubt","parer","chute","stick","trice","alike","recap","saint","glory","grate","admit","brisk","soggy","usurp","scald","scorn","leave","twine","sting","bough","marsh","sloth","dandy","vigor","howdy","enjoy","valid","ionic","equal","floor","catch","spade","stein","exist","quirk","denim","grove","spiel","mummy","fault","foggy","flout","carry","sneak"],
     "six":["german","guitar","toasty","caught","crafts","pointy","lovers","brainy","preset","jumper","teabag","trivia","aphids","unseat","myself","radius","badger","corpse","hunter","lizard","trophy","traced","advise","rhythm","banter","potato","genius","studio","honest","ponder","satire","formal","podium","CASUAL","JETLAG","ASHAME","UNMOOR","BUNTED","ARGUED","JOKERS","BUTTER","DENIED","ASLEEP","GHOSTS","COINED","GRISLY","WEEKLY","POKING","ASCENT","SNOUTS","OPPOSE","MOTHER","ROCKET","SPOILS","MAKING","EIGHTY","adverb","SOCKET","FLAIRS","INJECT","HISSED","DEBATE","OGLING","AIMING","LEASES","UNRIPE","STRONG","BEARER","HONEST","STAKED","PERMIT","FLOCKS","GREEDY","ORDERS","PUNDIT","FLIGHT","COTTON","FAMILY","LITTLE","EXPORT","DIALOG","GOATEE","DOLLAR","FOUGHT","RENDER","THRUST","SAMPLE","UNSAFE","TUNNEL","UTMOST","GAMING","PIMPLE","COLDER","MISFIT","AUTHOR","COATED","PATROL","ALMOST","NOTIFY","GURGLE","GLAZED","OYSTER","ESCAPE","GANDER","OWNERS","REDACT","MARKUP","ROYALS","BLIMEY","PLUMBS","NICELY","BURSTS","EXPERT","STRESS","STRUNG","ETHICS","WILTED","EXODIC","SQUINT","RAFFLE","PRUNED","HARKEN","DARKLY","BREAST","BRANCH"],
-    "septle":["spinach","because","ghostly","godsend","gardens","reptile","between","plastic","forever","musical","haircut","explain","condemn","narwhal","formula","lactose","drastic","stylist","elastic","ragtime","muscled","pyramid","clarify","aspirin","copycat","glacial","seizure","garnish","tabloid","harvest","eastern","factory","posture","contour","partake","obscure","paprika","special","confide","treason","DANCERS","OFFLINE","CATALOG","SPAMMED","DIRTIED","FRIENDS","OMITTED","RAGEFUL","DEVOTED","SLOWEST","RINGING","REPLAYS","CREASED","JOBLESS","PHANTOM","FIREMEN","REFUSED","INSPECT","BUGLERS","PITYING","ITCHING","SECURED","PROBLEM","VISUALS","UNSLUNG","IMPEACH","SERGING","SNIPPER","LIVIDLY","SPINAGE","CLANGER","UNICORN","TASTERS","CAUTION","THREATS","SOYBEAN","ARMLOAD","SEEPING","BEANBAG","OUTLAWS","MEANING","JUNKIER","DANGERS","NEWBORN","ROYALLY","POTPIES","LIMPING","WILDCAT","WARSHIP","MARBLES","FREEWAY","INMATES","STARTED","UNBRAID","COLORED","DOORMEN","LOCATOR","STENCHY","MAJESTY","TEENAGE","PASTELS","WORKOUT","GOURMET","DINNING","WAYSIDE","WINDOWS","FORKFUL","FLAMMED","PARCELS","DENSITY","ALUMIUM","BRACING","EQUINOX","WEAVERS","AFFECTS","HACKSAW","POTLUCK","REPLACE","CENSORS","EXISTED","INCASED","ABUSING","UNBOUND","INKWELL","ECHOING","CHEMIST","AMAZING","INFANTS","ALMONDS","BALISTA","RUNWAYS","ALEGGED","EXECUTE","SLIDING","SANDPIT","LAUNDER","REVOKES","PLUCKED","PROJECT","JOURNAL","BLOCKED","SPILLED","UNSLICK","BRIDALS","UPLOADS","CASTOFF","MARSHAL","TOPCOAT","UPGRADE","TOURIST","ENCRYPT","DISTURB","BROUGHT","COMPOST","GYMNAST","BUTTERY","REMOVES","RELLISH","FORMULA","SOMEONE","DISTANT","SYNAPSE","SUMMARY","WEAVING","WEIRDOS","SLIPPER","LOANERS","ORPHANS","PARDONS","ANNOYED","DWARVES","BIOTICS","RAMPAGE","TEASING"]
+    "septle":["spinach","because","ghostly","godsend","gardens","reptile","between","plastic","forever","musical","haircut","explain","condemn","narwhal","formula","lactose","drastic","stylist","elastic","ragtime","muscled","pyramid","clarify","aspirin","copycat","glacial","seizure","garnish","tabloid","harvest","eastern","factory","posture","contour","partake","obscure","paprika","special","confide","treason","DANCERS","OFFLINE","CATALOG","SPAMMED","DIRTIED","FRIENDS","OMITTED","RAGEFUL","DEVOTED","SLOWEST","RINGING","REPLAYS","cabinet","CREASED","JOBLESS","PHANTOM","FIREMEN","REFUSED","INSPECT","BUGLERS","PITYING","ITCHING","SECURED","PROBLEM","VISUALS","UNSLUNG","IMPEACH","SERGING","SNIPPER","LIVIDLY","SPINAGE","CLANGER","UNICORN","TASTERS","CAUTION","THREATS","SOYBEAN","ARMLOAD","SEEPING","BEANBAG","OUTLAWS","MEANING","JUNKIER","DANGERS","NEWBORN","ROYALLY","POTPIES","LIMPING","WILDCAT","WARSHIP","MARBLES","FREEWAY","INMATES","STARTED","UNBRAID","COLORED","DOORMEN","LOCATOR","STENCHY","MAJESTY","TEENAGE","PASTELS","WORKOUT","GOURMET","DINNING","WAYSIDE","WINDOWS","FORKFUL","FLAMMED","PARCELS","DENSITY","ALUMIUM","BRACING","EQUINOX","WEAVERS","AFFECTS","HACKSAW","POTLUCK","REPLACE","CENSORS","EXISTED","INCASED","ABUSING","UNBOUND","INKWELL","ECHOING","CHEMIST","AMAZING","INFANTS","ALMONDS","BALISTA","RUNWAYS","ALEGGED","EXECUTE","SLIDING","SANDPIT","LAUNDER","REVOKES","PLUCKED","PROJECT","JOURNAL","BLOCKED","SPILLED","UNSLICK","BRIDALS","UPLOADS","CASTOFF","MARSHAL","TOPCOAT","UPGRADE","TOURIST","ENCRYPT","DISTURB","BROUGHT","COMPOST","GYMNAST","BUTTERY","REMOVES","RELLISH","FORMULA","SOMEONE","DISTANT","SYNAPSE","SUMMARY","WEAVING","WEIRDOS","SLIPPER","LOANERS","ORPHANS","PARDONS","ANNOYED","DWARVES","BIOTICS","RAMPAGE","TEASING"]
   },
   getWord: function (list) {
     if(!list) {
@@ -36,11 +36,13 @@ window.septle = {
       new Date(this.firstDay).setHours(0, 0, 0, 0)) /
       864e5
     );
-    document.querySelector("#dayNumber").innerText = dayOffset + 1 + 254; // adjusted to be same as actual wordle
+    let visible = dayOffset + 1 + 254; // adjusted to be same as actual wordle
+    document.querySelector("#dayNumber").innerText = visible;
     let word = this.wordList[list][dayOffset % this.wordList[list].length];
     return {
       word: word,
-      dayOffset: dayOffset
+      dayOffset: dayOffset,
+      visible: visible
     };
   },
   getBoard: function() {
@@ -89,19 +91,40 @@ window.septle = {
   },
   new: function (word, silence) {
     // get variables
-    if (!word) word = this.getWord()["word"];
+    let todayInfo = this.getWord();
+    if (!word) word = todayInfo["word"];
     this.word = word;
     let collums = word.length;
     let rows = collums + 1;
     let table = document.querySelector("table.squares");
+    let scale = 1;
+    let scales = {5:1.35,6:1.15,7:1}
+    if(scales[collums]) {
+      scale = scales[collums];
+    }
     // clean up keyboard
     document.querySelectorAll("button.key").forEach(key => {
       key.classList.remove("filled");
       key.removeAttribute("data-state");
     });
-    // set up board
-    table.style = "--letters:" + collums + ";--rows:" + rows;
+    // setup/reset board
+    table.style = "--letters:" + collums + ";--rows:" + rows + ";transform:scale(" + scale + ");";
     table.innerHTML = "";
+    table.setAttribute("class","squares");
+    // add caption/title
+    let title = document.createElement("caption");
+    if(this.listName != "practice") {
+      let presentedNames = {"septle":"Septle","nytimes":"Wordle","six":"Septle Bonus"};
+      title.innerHTML = "<strong>" + presentedNames[this.listName] + " #" + todayInfo["visible"] + "</strong>";
+    }
+    title.classList.add("title");
+    table.appendChild(title);
+    let caption = document.createElement("caption");
+    caption.innerText = "Correct Word: " + word.toUpperCase();
+    caption.style = "caption-side:bottom;";
+    caption.classList.add("answer");
+    table.appendChild(caption);
+    // create squares
     for (let i = 0; i < rows; i++) {
       let newRow = table.insertRow();
       if (i == 0) newRow.classList.add("current");
@@ -271,7 +294,7 @@ window.septle = {
         if(!nosave) {
           alert("You won!");
           window.confetti({particleCount:150,ticks:150});
-          setTimeout(goHome,2000);
+          setTimeout(goHome,3000);
         }
         simpleBoard["solved"] = true;
       } else if (row.nextElementSibling) {
@@ -281,11 +304,12 @@ window.septle = {
       } else {
         // losers
         if(nosave != "silence") {
-          alert("You lost! The correct word is " + word);
+          document.querySelector("table.squares").classList.add("fail");
           simpleBoard["solved"] = "fail";
         }
         if(!nosave) {
-          setTimeout(goHome,2000);
+          alert("You lost. Better luck next time!");
+          setTimeout(goHome,3000);
         }
       }
       // save board state
@@ -682,13 +706,10 @@ document.addEventListener("focus", function(){
 });
 
 /* Messages */
-// april fools message
-if(!localStorage.monthlyMessage || localStorage.monthlyMessage != "aprilFix") {
-  localStorage.monthlyMessage = "aprilFix";
-  if(localStorage.aprilFools == "true") {
-    window.septle.theme.aprilFools();
-  }
-  //window.septle.aside.show("monthlyMessage");
+// introduction first time
+if(!localStorage.intro) {
+  localStorage.intro = true;
+  window.septle.aside.show("intro");
 }
 // check to see if coming from nytimes version
 if(localStorage.gameState && !localStorage.welcomeBackMessage) {

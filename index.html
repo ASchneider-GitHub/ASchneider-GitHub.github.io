@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Septle</title>
-  <meta name="description" content="Guess the hidden word in 8 tries. A new puzzle is available each day.">
+  <meta name="description" content="Septle is a seven letter word game based off of the New York Times' Wordle. Guess the hidden word in 8 tries. New puzzles are available each day.">
   <meta name="keywords" content="septle, septal, septile, 7, letter, words, wordle, game, puzzle, word, letters, play, online, guess">
   <meta name="theme-color" content="#21123b" />
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -228,6 +228,7 @@
   <aside id="info">
     <h1>Info</h1>
     <p>Septle is a seven letter word game based off of the <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">New York Times' Wordle</a>. The words update daily.</p>
+    <p>Not sure how to play? <a onclick="window.septle.aside.show('intro');">Learn here</a></p>
     <p>The bonus and NYTimes words are not required to get a streak.</p>
     <br>
     <p>&copy; Septle 2022. All rights reserved.<br>Wordle and the The New York Times are copyrighted properties of The New York Times Company and are not affiliated with Septle.</p>
@@ -252,20 +253,57 @@
     <p>We appreaciate all who have given us <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform" target="_blank">feedback</a>. Let us know if there are more problems.</p>
     <button onclick="window.septle.aside.show('home');">Continue to new version!</button>
   </aside>
-  <aside id="monthlyMessage">
-    <h1 style="color:var(--pink)">Happy April<span> Fools Day</span>!</h1>
-    <p>We've switched up the colors a little bit to be more spring like!</p>
+  <aside id="intro">
+    <h2>How to Play</h2>
+    <p>Guess the <strong>SEPTLE</strong> in 8 tries.</p>
+    <p>Each guess must be a valid 7 letter word. Hit the enter button to submit.</p>
+    <p>After each guess, the color of the tiles will change to show how close your guess was to the word.</p>
+    <br><h2>Examples</h2>
+    <p>The letter W is in the word and in the correct spot.</p>
+    <table class="squares" style="--rows:1;--letters:7;">
+      <tbody style="padding:0">
+        <tr>
+          <td data-state="tbd">B</td>
+          <td data-state="tbd">E</td>
+          <td class="filled" data-state="correct">W</td>
+          <td data-state="tbd">E</td>
+          <td data-state="tbd">A</td>
+          <td data-state="tbd">R</td>
+          <td data-state="tbd">Y</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The letter I is in the word but in the wrong spot.</p>
+    <table class="squares" style="--rows:1;--letters:7;">
+      <tbody style="padding:0">
+        <tr>
+          <td data-state="tbd">P</td>
+          <td class="filled" data-state="present">I</td>
+          <td data-state="tbd">L</td>
+          <td data-state="tbd">L</td>
+          <td data-state="tbd">A</td>
+          <td data-state="tbd">G</td>
+          <td data-state="tbd">E</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The letter U is not in the word in any spot.</p>
+    <table class="squares" style="--rows:1;--letters:7;">
+      <tbody style="padding:0">
+        <tr>
+          <td data-state="tbd">V</td>
+          <td data-state="tbd">A</td>
+          <td data-state="tbd">G</td>
+          <td class="filled" data-state="absent">U</td>
+          <td data-state="tbd">E</td>
+          <td data-state="tbd">L</td>
+          <td data-state="tbd">Y</td>
+        </tr>
+      </tbody>
+    </table>
     <br>
-    <p>If you don't like the new colors you can turn them off in <a onclick="window.septle.aside.show('settings')">settings</a>.</p>
-    <br><br>
-    <p>
-      New colors (trying to make it more flower like):<br>
-      Gray —> Brown<br>
-      Yellow —> Pink<br>
-      Green —> Green<br>
-    </p>
-    <br><br><br>
-    <button onclick="window.septle.aside.show('home');">Continue</button>
+    <p>A new SEPTLE will be available each day!</p>
+    <button onclick="document.querySelector('#septle button.play').click();" class="play"></button>
   </aside>
 
   <!--alert section -->
@@ -282,6 +320,7 @@
     <i class="fa-solid fa-arrows-rotate"></i>
     <h1>Rotate out of Landscape to play</h1>
   </div>
+
   <!-- load script -->
   <script  src="./script.js"></script>
 

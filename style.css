@@ -82,11 +82,11 @@ body:not(.dark) .lightEnabled, .dark .darkEnabled {
 }
 
 /*:root {
-  --color-absent: var(--color-tone-2);
-  --key-bg: var(--color-tone-4);
-  --key-bg-present: var(--color-present);
-  --key-bg-correct: var(--color-correct);
-  --key-bg-absent: var(--color-absent);
+--color-absent: var(--color-tone-2);
+--key-bg: var(--color-tone-4);
+--key-bg-present: var(--color-present);
+--key-bg-correct: var(--color-correct);
+--key-bg-absent: var(--color-absent);
 }*/
 :root {
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
@@ -202,6 +202,29 @@ table.squares td {
   justify-content: center;
   align-items: center;
 }
+/* Start captions and screenshots */
+table.squares.photo td {
+  color: transparent !important;
+}
+table.squares.photo {
+  transform: scale(1) !important;
+}
+@media (max-height: 700px) {
+  table.squares.fail {
+    transform: scale(0.9) !important;
+  }
+}
+table.squares caption {
+  display: none;
+  font-size: 20px;
+}
+table.squares caption strong {
+  font-size: 30px;
+}
+table.squares.photo caption.title, table.squares.fail caption.answer {
+  display: table-caption;
+}
+/* End captions and screenshots */
 tr.current td {
   cursor: pointer;
 }
@@ -236,8 +259,13 @@ td[data-state="tbd"] {
   border: 2px solid var(--color-tone-3);
   animation: pop .3s;
 }
-td.filled, button.filled {
+table {
   --duration: 0.5s;
+}
+table.photo {
+  --duration: 0s !important;
+}
+td.filled, button.filled {
   --half: calc(var(--duration) / 12);
   animation-name: fill;
   animation-duration: var(--duration);
@@ -375,6 +403,8 @@ aside {
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto;
+  /* iOS/mobile device scroll fixes */
+  touch-action: pan-y;
 }
 @media (max-width: 500px) {
   aside {
@@ -608,7 +638,7 @@ div.loadScreen, div.landscape {
   background: var(--purple);
   color: white;
   text-align: center;
-  transition: bottom 0.5s 1s;
+  transition: bottom 0.5s 0.5s;
   border-radius: 15px 15px 0 0;
   font-family: arial;
   overflow: hidden;
