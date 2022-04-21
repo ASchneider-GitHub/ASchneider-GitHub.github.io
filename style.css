@@ -259,7 +259,7 @@ td[data-state="tbd"] {
   border: 2px solid var(--color-tone-3);
   animation: pop .3s;
 }
-table {
+:root {
   --duration: 0.5s;
 }
 table.photo {
