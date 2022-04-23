@@ -94,7 +94,9 @@ body:not(.dark) .lightEnabled, .dark .darkEnabled {
 }
 * {
   box-sizing: border-box;
-  touch-action: none;
+  /*touch-action: none;*/
+  /* iOS/mobile device scroll fixes */
+  touch-action: pan-y;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   user-select: none;
@@ -217,6 +219,7 @@ table.squares.photo {
 table.squares caption {
   display: none;
   font-size: 20px;
+  color: var(--color-tone-1);
 }
 table.squares caption strong {
   font-size: 30px;
@@ -403,8 +406,6 @@ aside {
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto;
-  /* iOS/mobile device scroll fixes */
-  touch-action: pan-y;
 }
 @media (max-width: 500px) {
   aside {
