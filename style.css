@@ -210,6 +210,7 @@ table.squares.photo td {
 }
 table.squares.photo {
   transform: scale(1) !important;
+  background: var(--opacity-50);
 }
 @media (max-height: 700px) {
   table.squares.fail {
@@ -506,11 +507,11 @@ aside button strong {
   font-size: 26px;
   margin-bottom: 5px;
 }
-aside#home div button.board, aside#home div.complete button.play, aside#home div.fail button.play {
+aside#home div span.completeButtons, aside#home div.complete button.play, aside#home div.fail button.play {
   display: none;
 }
-aside#home div.complete button.board, aside#home div.fail button.board {
-  display: block;
+aside#home div.complete span.completeButtons, aside#home div.fail span.completeButtons {
+  display: flex;
 }
 aside button:before {
   font-weight: bold;
@@ -524,6 +525,9 @@ aside button.play:before {
 aside button.board:before {
   content: "\e195  View Board";
 }
+aside button.image:before {
+  content: "\e164  Save Image";
+}
 aside button.info:before {
   content: "\f05a  Info";
 }
@@ -536,6 +540,9 @@ aside button.share:before {
 aside button.copy:before {
   content: "\f0c5";
 }
+aside button.email:before {
+  content: "\f0e0";
+}
 aside button.telegram:before {
   content: "\f2c6";
 }
@@ -545,8 +552,12 @@ aside button.twitter:before {
 aside button.facebook:before {
   content: "\f39e";
 }
-aside button.share, aside button.openStats, aside button.telegram, aside button.twitter, aside button.facebook, aside button.info {
+aside button.openStats, aside button.info, aside button.share {
   color: white;
+}
+aside button.telegram, aside button.twitter, aside button.facebook, aside button.email {
+  color: white;
+  font-size: 20px;
 }
 aside button.share, aside button.openStats {
   background: var(--green);
@@ -563,6 +574,9 @@ aside button.twitter {
 aside button.telegram {
   background: #179cde;
   font-size: 24px;
+}
+aside button.email {
+  background: var(--gray);
 }
 aside button.facebook {
   background: #39569c;

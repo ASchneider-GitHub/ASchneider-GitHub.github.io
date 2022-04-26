@@ -4,7 +4,7 @@
   <!-- only keep this non-codepen stuff -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>Septle</title>
+  <title>Septle - The Seven Letter Wordle</title>
   <meta name="description" content="Septle is a seven letter word game based off of the New York Times' Wordle. Guess the hidden word in 8 tries. New puzzles are available each day.">
   <meta name="keywords" content="septle, septal, septile, 7, letter, words, wordle, game, puzzle, word, letters, play, online, guess">
   <meta name="theme-color" content="#21123b" />
@@ -19,8 +19,8 @@
 <!-- FB Meta Tags -->
 <meta property="og:url" content="https://septle.com">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Septle - a seven letter word game">
-<meta property="og:description" content="Guess the hidden word in 8 tries. A new puzzle is available each day.">
+<meta property="og:title" content="Septle - The Seven Letter Wordle">
+<meta property="og:description" content="Guess the hidden word in 8 tries. New puzzles are available each day.">
 <meta property="og:image" content="https://septle.com/content.png">
 
 <!-- Twitter Meta Tags -->
@@ -97,22 +97,39 @@
     <div id="septle" class="bundle">
       <h2>Septle: <span class="status"></span></h2>
       <button onclick="window.septle.start(this);" class="play"></button>
-      <button onclick="window.septle.start(this);" class="board"></button>
+      <span class="halfButtons completeButtons">
+        <button onclick="window.septle.start(this);" class="board"></button>
+        <button onclick="window.septle.saveImage.run('septle');" class="image"></button>
+      </span>
     </div>
     <div id="six" class="bundle">
       <h2>Six Letter Bonus: <span class="status"></span></h2>
       <button onclick="window.septle.start(this);" class="play"></button>
-      <button onclick="window.septle.start(this);" class="board"></button>
+      <span class="halfButtons completeButtons">
+        <button onclick="window.septle.start(this);" class="board"></button>
+        <button onclick="window.septle.saveImage.run('six');" class="image"></button>
+      </span>
     </div>
     <div id="nytimes" class="bundle">
       <h2>NYTimes word: <span class="status"></span></h2>
       <button onclick="window.septle.start(this);" class="play"></button>
-      <button onclick="window.septle.start(this);" class="board"></button>
+      <span class="halfButtons completeButtons">
+        <button onclick="window.septle.start(this);" class="board"></button>
+        <button onclick="window.septle.saveImage.run('nytimes');" class="image"></button>
+      </span>
     </div>
     <span class="halfButtons">
       <button onclick="window.septle.aside.show('info');" class="info"></button>
       <button onclick="window.septle.aside.show('statistics');" class="openStats"></button>
     </span>
+    <span style="height:10px;display:block;"></span>
+    <div class="bundle">
+      <h2>Support Us</h2>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeBMjFjauT9ynh809m3NhGiUbiXr1lkefSpDTtJrS9WIxgyAA/viewform')"><i class="fa-solid fa-message-lines"></i> Leave Feedback</button>
+      <span style="height:10px;display:block;"></span>
+      <button style="background:var(--pink);color:white" onclick="window.open('https://ko-fi.com/septle')"><i class="fa-solid fa-heart"></i> Support by Donating</button>
+      <!--Stuff-->
+    </div>
   </aside>
   <aside id="practice">
     <h1>Practice Mode</h1>
@@ -145,7 +162,7 @@
       <button><strong>0</strong>8</button>
     </span>
     <br>
-    <h2>Current Streak: <span id="streak">0 days</span></h2>
+    <h2>🔥 Streak: <span id="streak">0 days</span> / Best: <span id="bestStreak">0 days</span></h2>
     <span class="halfButtons visualButtons">
       <button><strong id="winCount">0</strong>Completed</button>
       <button><strong id="failCount">0</strong>Failed</button>
@@ -160,11 +177,15 @@
     </span>
     <br>
     <span class="halfButtons">
+      <button class="share" onclick="septle.statistics.share()"> Share</button>
+      <button class="copy" onclick="septle.statistics.copy()"> Copy Results</button>
+    </span>
+    <span style="height:10px;display:block;"></span>
+    <span class="halfButtons">
       <button class="telegram" onclick="septle.statistics.url('telegram')"></button>
       <button class="twitter" onclick="septle.statistics.url('tweet')"></button>
       <button class="facebook" onclick="septle.statistics.url('facebook')"></button>
-      <button class="share" onclick="septle.statistics.share()"></button>
-      <button class="copy" onclick="septle.statistics.copy()"></button>
+      <button class="email" onclick="septle.statistics.url('email')"></button>
     </span>
   </aside>
   <aside id="settings">

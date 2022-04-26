@@ -468,7 +468,8 @@ window.septle = {
       // generate full sharing string
       let streak = this.load()["streak"];
       shareContent["day"] = dayNumber;
-      shareContent["all"] = "#Septle " + dayNumber + " - " + streak + " day streak - septle.com\n" + shareContent["septle"]["all"] + shareContent["six"]["all"] + shareContent["nytimes"]["all"];
+      shareContent["all"] = "#Septle " + dayNumber + " - 🔥 " + streak + " day streak - septle.com\n" + shareContent["septle"]["all"] + shareContent["six"]["all"] + shareContent["nytimes"]["all"];
+      shareContent["email"] = "mailto:?subject=Septle " + dayNumber + "&body=" + encodeURIComponent(shareContent["all"]);
       shareContent["tweet"] = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareContent["all"]);
       shareContent["telegram"] = "https://t.me/share/url?url=https://septle.com&text=" + encodeURIComponent(shareContent["all"]);
       shareContent["facebook"] = "https://www.facebook.com/sharer/sharer.php?u=septle.com&quote=Paste your score";
@@ -476,9 +477,29 @@ window.septle = {
     },
     copy: function() {
       let shareText = this.fetchEmojis()["all"];
-      navigator.clipboard.writeText(shareText);
-      alert("Copied results to clipboard!");
+      if(navigator.clipboard) {
+        navigator.clipboard.writeText(shareText);
+        alert("Copied results to clipboard!");
+      } else {
+        this.copyFallback(shareText);
+      }
       gtag("event","share");
+    },
+    copyFallback: function(text) {
+      var textArea = document.createElement("textarea");
+      textArea.value = text;
+      // Avoid scrolling to bottom
+      textArea.style.top = "0";
+      textArea.style.left = "0";
+      textArea.style.position = "fixed";
+      textArea.style.opacity = 0;
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      textArea.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert("Copied results to clipboard using fallback!");
     },
     share: function() {
       let shareText = this.fetchEmojis()["all"];
@@ -520,6 +541,9 @@ window.septle = {
         let board = window.septle.getBoard();
         if(board["septle"]["solved"] == true) {
           stats["streak"]++;
+          if(stats["bestStreak"] < stats["streak"]) {
+            stats["bestStreak"] = stats["streak"];
+          }
           stats["lastStreak"] = offset;
         } else if(board["septle"]["solved"] == "fail") {
           stats["streak"] = 0;
@@ -533,16 +557,24 @@ window.septle = {
       let basicStats = {
         "distribution":[0,0,0,0,0,0,0,0],
         "streak":0,
+        "bestStreak":0,
         "win":0,
         "fail":0,
         "lastStreak":0
       };
       let stats = localStorage.septleStats || JSON.stringify(basicStats);
       stats = JSON.parse(stats);
+      // establish best streak if not already saved to localStorage
+      if(stats["bestStreak"] === undefined) {
+        stats["bestStreak"] = stats["streak"];
+      }
       // if coming over from old version
       if(localStorage.statistics && !localStorage.importedStatistics) {
         let oldStats = JSON.parse(localStorage.statistics);
         stats["streak"] += oldStats["currentStreak"];
+        if(stats["bestStreak"] < stats["streak"]) {
+          stats["bestStreak"] = stats["streak"];
+        }
         stats["win"] += oldStats["gamesWon"];
         stats["fail"] += oldStats["gamesPlayed"] - oldStats["gamesWon"];
         let distValues = Object.values(oldStats["guesses"]);
@@ -591,13 +623,10 @@ window.septle = {
         buttons[i].querySelector("strong").innerText = value;
       }
       // do streak stats
-      let optionalS = (stats["streak"] != 1);
-      if(optionalS) {
-        optionalS = "s";
-      } else {
-        optionalS = "";
-      }
+      let optionalS = stats["streak"] == 1 ? "" : "s";
       document.querySelector("#streak").innerText = stats["streak"] + " day" + optionalS;
+      optionalS = stats["bestStreak"] == 1 ? "" : "s";
+      document.querySelector("#bestStreak").innerText = stats["bestStreak"] + " day" + optionalS;
       document.querySelector("#winCount").innerText = stats["win"];
       document.querySelector("#failCount").innerText = stats["fail"];
       document.querySelector("#winsPercent").innerText = Math.round(100 * stats["win"] / (stats["win"] + stats["fail"])) + "%";
@@ -665,7 +694,7 @@ window.septle = {
       localStorage.aprilFools = document.body.classList.toggle("aprilFools");
     },
     load: function() {
-      if(localStorage.darkTheme && localStorage.darkTheme == "true" || window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      if(localStorage.darkTheme && localStorage.darkTheme == "true" || !localStorage.darkTheme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.body.classList.add("dark");
         localStorage.darkTheme = "true";
       }
@@ -697,6 +726,10 @@ window.septle.statistics.load();
 window.septle.statistics.updateStreak("test");
 // load more resources
 document.body.appendChild(document.createElement('script')).src='concepts/confetti.js';
+document.body.appendChild(document.createElement('script')).src='concepts/image.js';
+
+// change the title to be more readable
+document.title = "Septle";
 
 // check to see if day has passed
 document.addEventListener("focus", function(){
